@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     border: none;
@@ -8,7 +10,9 @@ a {
     text-decoration: none;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -29,14 +33,12 @@ h6 {
 html,
 body {
     height: 100%;
-    
 }
 body {
     font-family: Roboto;
     line-height: 1;
     font-size: 18px;
     color: #333333;
-    
 }
 .wrapper {
     min-height: 100%;
@@ -49,7 +51,7 @@ body {
     margin-top: 100px;
 }
 .page__info {
-    padding-top: 100px; 
+    padding-top: 100px;
 }
 .header {
     background-color: #fff;
@@ -76,7 +78,6 @@ body {
     color: #333333;
 }
 
-
 .content {
     display: flex;
     flex-direction: row;
@@ -86,23 +87,21 @@ body {
     padding-left: 10px;
     margin-bottom: 20px;
 }
-.yellow li{
+.yellow li {
     margin: 15px 0px;
     text-indent: -26px;
     padding-left: 25px;
 }
 .yellow li::before {
-        content: "•";
-        font-size: 130%;
-        line-height: 0;
-        margin: 0px 20px 0px 0px;
-        position: relative;
-        top: 2px;
-        color: #ff9d00;
+    content: "•";
+    font-size: 130%;
+    line-height: 0;
+    margin: 0px 20px 0px 0px;
+    position: relative;
+    top: 2px;
+    color: #ff9d00;
 }
 
-.header__article {
-}
 .ht__container h1 {
     font-size: 36px;
     font-weight: 400;
@@ -110,8 +109,6 @@ body {
     border-bottom: 1px solid #ff9d00;
     /* margin-bottom: 30px; */
     text-transform: uppercase;
-}
-.details__container {
 }
 
 .section {
@@ -131,9 +128,9 @@ body {
     background-color: #f1f1f18c;
 }
 
-.section__pidtrymka {
-}
-.pidtrymka__container {
+.copyright__data p {
+    color: #fff;
+    font-weight: 300;
 }
 .section__title {
     font-size: 30px;
@@ -159,14 +156,14 @@ body {
 .section__details a:hover {
     color: #ff9d00;
 }
-.section__details  p, .article__data p {
+.section__details p,
+.article__data p {
     line-height: 20px;
     padding-bottom: 15px;
 }
 .section__details img {
     width: 80%;
     padding: 20px 0px;
-
 }
 #pidtrymka img {
     width: 50%;
@@ -189,10 +186,9 @@ body {
     z-index: 1;
     margin-top: 20px;
     border: 1px solid #ff9d00;
-    -webkit-box-shadow: inset 0px 0px 44px -1px rgba(255,157,0,1);
-    -moz-box-shadow: inset 0px 0px 44px -1px rgba(255,157,0,1);
-    box-shadow: inset 0px 0px 5px -1px rgba(255,157,0,1);
-
+    -webkit-box-shadow: inset 0px 0px 44px -1px rgba(255, 157, 0, 1);
+    -moz-box-shadow: inset 0px 0px 44px -1px rgba(255, 157, 0, 1);
+    box-shadow: inset 0px 0px 5px -1px rgba(255, 157, 0, 1);
 }
 .button:hover {
     color: #fff;
@@ -212,7 +208,6 @@ body {
     transform-origin: top right;
     transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
     transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-
 }
 .button:hover::after {
     transform: scale(1, 1);
@@ -220,10 +215,10 @@ body {
 }
 
 .menu__link {
-    --fill:#333;
+    --fill: #333;
     position: relative;
     display: block;
-    padding:4px 0;
+    padding: 4px 0;
     font: 900 26px Roboto, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
@@ -233,17 +228,16 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     transition: 0.5s linear;
-
 }
 .menu__link:hover {
     background-size: 100%;
-
 }
 
 .footer {
-    background-color: #333333;
+    background-color: #000;
+    padding: 10px 0;
 }
-.footer .section__title3 {
+.section__footer .section__title3 {
     color: #fff;
     font-size: 26px;
     font-weight: 400;
@@ -255,13 +249,16 @@ body {
 .section__cv {
     background-color: #333333;
 }
-.cv__container {
+.copyright__container {
+    display: flex;
+    min-height: 80px;
+    align-items: center;
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
     .menu__list {
         display: block;
-    } 
+    }
     .menu__link {
         font: 900 20px Roboto, sans-serif;
         float: left;
@@ -269,31 +266,26 @@ body {
     }
 }
 
-
-[class*="__container"]{
+[class*="__container"] {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0px 15px;
 }
 @media (max-width: 1199.98px) {
-    [class*="__container"]{
+    [class*="__container"] {
         max-width: 970px;
     }
-    
 }
 @media (max-width: 990.98px) {
-    [class*="__container"]{
+    [class*="__container"] {
         max-width: 750px;
     }
-    
 }
 @media (max-width: 767.98px) {
-    [class*="__container"]{
+    [class*="__container"] {
         max-width: none;
     }
     .content {
         flex-direction: column;
     }
-
-    
 }
