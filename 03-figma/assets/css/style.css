@@ -164,6 +164,10 @@ h2 {
     column-gap: 50px;
     row-gap: 10px;
 }
+.contacts__icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.25s;
+}
 .contacts__icon {
     width: 40px;
 }
