@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Така-сяка форма</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,regular,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <main class="page">
+            <div class="container">
+                <form action="#" method="post" enctype="multipart/form-data" class="some__form" id="my_form"
+                    onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+                    <div class="contact-inputs">
+
+                        <fieldset class="common">
+
+                            <legend>Загальна інформація</legend>
+
+                            <div class="input__group field">
+                                <input type="text" class="input__field" id="1" name="blocked-fild"
+                                    value="Зміни дані, якщо зможеш" disabled />
+                                <label for="1" class="input__label">Заблоковане поле</label>
+                            </div>
+                            <div class="input__group field">
+                                <input type="text" class="input__field" id="2" name="forread" value="Але це не точно"
+                                    readonly />
+                                <label for="2" class="input__label">Спробуй тут</label>
+                            </div>
+                            <div class="input__group field">
+                                <input type="text" class="input__field" id="3" name="pib" placeholder="Повне ім'я"
+                                    required />
+                                <label for="3" class="input__label">Тут точно можна</label>
+                            </div>
+                            <div class="input__group field">
+                                <input type="email" class="input__field" id="4" name="email" placeholder="Email"
+                                    required />
+                                <label for="4" class="input__label">Пошту маєш?</label>
+                            </div>
+                            <div class="input__group field">
+                                <input type="password" class="input__field" id="5" name="email" placeholder="********"
+                                    required />
+                                <label for="5" class="input__label">Вкажи пароль</label>
+                            </div>
+
+                            <div class="input__group field">
+                                <input type="date" class="input__data" id="6" name="birth" min="1923-01-01"
+                                    max="2013-01-01" required />
+                                <label for="6" class="input__label">Як щодо дати народження?</label>
+                            </div>
+                            <div class="input__group field mt-0">
+                                <input type="number" class="input__data" id="7" name="years" min="10" max="100"
+                                    required />
+                                <label for="7" class="input__label">Вік</label>
+                            </div>
+                            <div class="input__group field sets mt-0">
+                                <p>Обери стать</p>
+                                <div class="sets__group">
+                                    <div class="sets__radio">
+                                        <input type="radio" class="input__data" id="8" name="gender" value="Чоловік"
+                                            checked />
+                                        <label for="8" class="input__label">Чоловік</label>
+
+                                    </div>
+                                    <div class="sets__radio">
+                                        <input type="radio" class="input__data" id="9" name="gender" value="Жінка" />
+                                        <label for="9" class="input__label">Жінка</label>
+                                    </div>
+                                    <div class="sets__radio">
+                                        <input type="radio" class="input__data" id="10" name="gender"
+                                            value="Важко визначитись" />
+                                        <label for="10" class="input__label">Важко визначитись</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input__group field sets">
+                                <p>Де спілкуєшся?</p>
+                                <div class="sets__group">
+                                    <div class="sets__radio">
+                                        <input type="checkbox" class="input__data" id="11" name="social[]"
+                                            value="Facebook" checked />
+                                        <label for="11" class="input__label">Facebook</label>
+
+                                    </div>
+                                    <div class="sets__radio">
+                                        <input type="checkbox" class="input__data" id="9" name="social[]"
+                                            value="Slack" />
+                                        <label for="12" class="input__label">Slack</label>
+                                    </div>
+                                    <div class="sets__radio">
+                                        <input type="checkbox" class="input__data" id="13" name="social[]"
+                                            value="Telegram" />
+                                        <label for="13" class="input__label">Telegram</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Додаткова інформація</legend>
+                            <div class="input__group field color">
+                                <input type="color" class="input__color" id="14" name="yourcolor" value="#a6c1ee"
+                                    required />
+                                <label for="14" class="input__label">Улюблений колір</label>
+                            </div>
+                            <div class="input__group field color phone mt-0">
+                                <input type="tel" class="input__color" id="15" name="phone" value="" placeholder="+380"
+                                    required />
+                                <label for="15" minlength="13" maxlength="13" class="input__label">Номер
+                                    телефону</label>
+                            </div>
+                            <div class="input__group field color mt-0">
+                                <input type="time" class="input__color" id="16" name="time" value="" required />
+                                <label for="16" class="input__label">Вкажи час</label>
+                            </div>
+                            <div class="input__group field color mt-0">
+                                <input type="url" class="input__color" id="17" pattern="https://.*" name="site" value=""
+                                    placeholder="https://example.com" required />
+                                <label for="17" class="input__label">Маєш сайт?</label>
+                            </div>
+                            <div class="input__group field color mt-0">
+                                <input type="range" class="input__color" id="18" name="random" min="0" max="100"
+                                    value="60" step="10" required />
+                                <label for="18" class="input__label mt-0">Випадкове значення</label>
+                            </div>
+                            <div class="input__group field color file mt-0">
+                                <input type="file" class="input__color" id="19" name="photo"
+                                    accept="image/png, image/jpeg" />
+                                <label for="19" class="input__label">Фото за бажанням</label>
+                            </div>
+
+                        </fieldset>
+                        <fieldset>
+                            <legend>Не input</legend>
+                            <div class="input__group field color selector">
+                                <label class="input__label" for="20">Курс</label>
+                                <select name="courses" class="input__color" id="20" required>
+                                    <option value="">--Оберіть курс--</option>
+                                    <option value="frontend">Front-End розробка</option>
+                                    <option value="python">Python розробка</option>
+                                    <option value="c#">C# розробка</option>
+                                    <option value="uiux">UI/UX дизайн</option>
+                                    <option value="manual">QA Manual</option>
+                                    <option value="digital">Digital Marketing</option>
+
+                                </select>
+                            </div>
+                            <div class="input__group field color selector mt-0">
+                                <label class="input__label" for="21">Обери декілька курсів</label>
+                                <select name="fewcourses" class="input__color" id="21" multiple required>
+                                    <option value="frontend">Front-End розробка</option>
+                                    <option value="python">Python розробка</option>
+                                    <option value="c#">C# розробка</option>
+                                    <option value="uiux">UI/UX дизайн</option>
+                                    <option value="manual">QA Manual</option>
+                                    <option value="digital">Digital Marketing</option>
+
+                                </select>
+                            </div>
+                            <div class="input__group field color sets mt-0">
+                                <p>Декілька слів</p>
+                                <textarea name="sometext" id="22" placeholder="Тапками не закидувати ;)"
+                                    required></textarea>
+                            </div>
+                        </fieldset>
+                        <fieldset class="common__buttons">
+                            <legend>Нарешті можна тиснути</legend>
+                            <div class="button__items">
+                                <button type="submit" class="button button-1">Відправити</button>
+                                <button type="reset" class="button button-2">Стерти</button>
+                                <button type="button" class="button button-3">Тиць</button>
+                                <button type="submit" class="button button-4" disabled>Не тиць</button>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+                </form>
+            </div>
+            <!--може веселіше було тицяти на одні й ті ж самі кнопочки :) -->
+            <div class="player">
+                <div class="record">
+                    <div class="label"></div>
+                </div>
+                <div class="tone-arm">
+                    <div class="control"></div>
+                </div>
+                <button class="btn"></button>
+                <div class="slider-container">
+                    <input type="range" class="slider" min="0" max="1" step="0.1" value="0.7" />
+                </div>
+            </div>
+            <audio loop class="my-song" src="assets/baseballs.mp3" preload="auto"></audio>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
