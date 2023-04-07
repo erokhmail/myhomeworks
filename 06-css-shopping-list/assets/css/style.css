@@ -126,6 +126,7 @@ input[type=checkbox] {
 input[type=checkbox] + label {
     position: relative;
     padding-left: 35px;
+    cursor: pointer;
 }
 input[type=checkbox] + label::before {
     content: '';
@@ -175,7 +176,6 @@ input[type=checkbox]:checked + label .regular:first-child::after {
     width: 400px;
     position: relative;
     margin: auto;
-    top: -70px;
     left: 0;
 }
 .owl__branch {
