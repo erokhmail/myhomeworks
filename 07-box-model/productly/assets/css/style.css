@@ -1,0 +1,190 @@
+
+:root {
+    --orange-color: #f90;
+    --text-color: #544837;
+}
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+a.btn {
+    transition: all .2s ease-in;
+}
+ul, ol {
+    list-style: none;
+}
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+.logo {
+    float: left;
+    padding: 7px 0;
+}
+.logo img {
+    max-width: 200px;
+}
+nav {
+    float: left;
+    width: calc(100% - 37.8%);
+    text-align: center;
+}
+.main-menu {
+    margin: auto;
+    padding: 11px 0;
+    font-size: 0;
+}
+.main-menu > li {
+    font-size: 1rem;
+}
+.header {
+    min-height: 80px;
+    padding: 17px 0;
+}
+.header-buttons {
+    float: right;
+    font-size: 0;
+}
+.header-buttons .btn-white {
+    margin-right: 32px;
+}
+li {
+    display: inline-block;
+}
+.main-menu > li > a {
+    color: #2F281E;
+    line-height: 1.75rem;
+    text-decoration: none;
+}
+.main-menu > li > a:hover {
+    color: var(--orange-color);
+}
+.main-menu > li + li {
+    margin-left: 20px;
+}
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.219rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color:  var(--orange-color);
+    color: #fff;
+    border: 1px solid  var(--orange-color);
+    transition: all .2s ease-in;
+}
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: var(--orange-color);
+    border: 1px solid var(--orange-color);
+}
+.btn-white {
+    background-color: #fff;
+    color: #2F281E;
+    border: 1px solid #BCD0E5;
+    padding: 13px 25px;
+
+}
+.btn-white:hover {
+    background-color: var(--orange-color);
+    color: #fff;
+    border: 1px solid var(--orange-color);
+}
+/*-==============First-section==============-*/
+#dushnyi-float {
+    padding: 67px 0 100px 0;
+}
+.left-col, .right-col {
+    display: inline-block;
+}
+.left-col {
+    float: left;
+    width: calc(100% - 53.67%);
+    padding: 97px 50px 97px 0;
+}
+.right-col {
+    float: right;
+    width: 53.67%;
+}
+
+.h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    line-height: 3.375rem;
+}
+.slogan {
+    margin-bottom: 27px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+#dushnyi-float .btn {
+    font-weight: 700;
+    padding: 14px 40px;
+}
+
+/*-==============#First-section==============-*/
+@media (max-width: 1328px) {
+    nav {
+        width: 50%;
+    }
+}
+@media (max-width: 1024px) {
+    nav {
+        width: 65%;
+    }
+    .header-buttons {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 991px) {
+    .left-col, .right-col {
+        width: 100%;
+    }
+    .left-col {
+        padding: 40px 0;
+    }
+}
+@media (max-width: 650px) {
+    nav {
+        width: 100%;
+    }
+    .logo {
+        text-align: center;
+        width: 100%;
+    }
+}
