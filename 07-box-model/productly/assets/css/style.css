@@ -53,7 +53,7 @@ body {
 }
 nav {
     float: left;
-    width: calc(100% - 37.8%);
+    width: calc(100% - 200px - 255px );
     text-align: center;
 }
 .main-menu {

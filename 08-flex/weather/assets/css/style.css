@@ -58,7 +58,10 @@ body {
     padding: 2px; 
 }
 .block-items {
-    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 35px;
     font-size: 0;
     border-top: 4px solid #fff;
@@ -66,8 +69,7 @@ body {
     transition: var(--transition-block);
 }
 li {
-    display: inline-block;
-    width: 25%;
+    flex: 0 0 25%;
     font-size: 1.375rem;
     line-height: 1.625rem;
     text-align: center;
@@ -89,42 +91,42 @@ li {
     right: 2px;
 }
 li:first-child, li:nth-child(9) {
-    width: 50%;
+    flex: 0 0 50%;
 }
 li:last-child {
-    width: 100%;
+    flex: 0 0 100%;
 }
-li:nth-child(1) {
+.blue {
     background-color: #39C;
 }
-li:nth-child(2) {
+.light-blue {
     background-color: #3CC;
 }
-li:nth-child(3) {
+.warm-violet {
     background-color: #969;
 }
-li:nth-child(4) {
+.dark-red {
     background-color: #C24747;
 }
-li:nth-child(5) {
+.light-red {
     background-color: #E2674A;
 }
-li:nth-child(6) {
+.yellow {
     background-color: #FFCC66;
 }
-li:nth-child(7) {
+.light-green {
     background-color: #9C9;
 }
-li:nth-child(8) {
+.dark-green {
     background-color: #699;
 }
-li:nth-child(9) {
+.pink {
     background-color: #C69;
 }
-li:nth-child(10) {
+.green {
     background-color: #396;
 }
-li:nth-child(11) {
+.cold-violet {
     background-color: #669;
 }
 .wi {
@@ -143,25 +145,19 @@ li:nth-child(11) {
     font-weight: 400;
 }
 
-.block-items:hover > li > span.block-item {
+.block-items:hover > li > span.block-item:not(li:hover > span.block-item) {
     background-color: var(--background-hover);
-}
-.block-items:hover > li:hover > span.block-item {
-    background-color: rgba(255, 255, 255, 0);
-}
-.block-items:hover > li:hover ~ li::before > span.block-item {
-    background-color: var(--background-hover);
-}
+} 
 
 @media (max-width: 765px) {
     .block-items li {
-        width: 50%;
+        flex: 0 0 50%;
     }
     
 }
 @media (max-width: 480px) {
     .block-items li {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .h1, .text {
         text-align: center;
