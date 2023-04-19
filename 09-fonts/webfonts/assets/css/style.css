@@ -1,0 +1,162 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+} 
+ul li {
+    list-style: none;
+    text-align: center;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+body {
+    font-family: 'PT Sans';
+    color: #000;
+    font-size: 1.75rem;
+    line-height: 3rem;
+    font-weight: 400;
+}
+.h1 {
+    position: absolute;
+}
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+.top-header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+    padding: 10px 0;
+}
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 54px;
+    gap: 20px;
+}
+.header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 52px;
+}
+.main-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-menu li {
+    font-family: 'Staatliches';
+    font-size: 1.375rem;
+    line-height: 1.71875rem;
+    letter-spacing: 0.03rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-top: 7px;
+}
+.main-menu li:not(:last-child)::after {
+    content: "/";
+    padding: 0 10px;
+
+}
+.main-menu li > a {
+    color: #000;
+}
+.main-menu li > a:hover {
+    text-decoration: underline;
+}
+.disable {
+    pointer-events: none;
+}
+.lang {
+    font-family: 'Tourney';
+    font-size: 1.375rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 16px 0;
+}
+.ligo {
+    padding-top: 2px;
+}
+.chapter {
+    padding-top: 5px;
+    padding-bottom: 54px;
+}
+.first {
+    padding-top: 152px;
+}
+.h2 {
+    font-family: 'Francois One';
+    font-size: 2.25rem;
+    line-height: 3rem;
+    letter-spacing: 0.04rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.h2 > sup {
+    font-family: 'Farro';
+    font-size: 1.12rem;
+    line-height: 1.875rem;
+    letter-spacing: 0.04rem;
+    font-weight: 300;
+    text-transform: none;
+    position: relative;
+    bottom: 12px;
+}
+p:not(:last-of-type) {
+    padding-bottom: 40px;
+}
+.color-point {
+    background-color: #dadada;
+    padding: 4px 2px;
+}
+.chapter .pb-30 {
+    padding-bottom: 30px;
+}
+.chapter .pb-28 {
+    padding-bottom: 28px;
+}
+@media (max-width: 668px) {
+    .top-header {
+        padding-top: 20px;
+    }
+    .header-block {
+        gap: 10px;
+    }
+    .header-left {
+        order: 1;
+    }
+    .first {
+        padding-top: 200px;
+    }
+}
+@media (max-width: 400px) {
+    .header-left {
+        flex-wrap: wrap;
+    }
+}
