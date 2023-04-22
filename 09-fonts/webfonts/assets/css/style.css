@@ -9,7 +9,6 @@ a {
 } 
 ul li {
     list-style: none;
-    text-align: center;
 }
 
 img {
@@ -79,7 +78,6 @@ body {
 .main-menu li:not(:last-child)::after {
     content: "/";
     padding: 0 10px;
-
 }
 .main-menu li > a {
     color: #000;
@@ -141,6 +139,7 @@ p:not(:last-of-type) {
 .chapter .pb-28 {
     padding-bottom: 28px;
 }
+
 @media (max-width: 668px) {
     .top-header {
         padding-top: 20px;
