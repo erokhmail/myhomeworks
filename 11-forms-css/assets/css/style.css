@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.0125rem;
+    color: #545454;
+    background-color: #F7F7F7;
+    /* font-family: 'Inter', sans-serif; */
+}
+.container {
+    width: min(90%, 570px);
+    margin: 0 auto;
+    padding: 60px 0;
+    background-color: #fff;
+}
+.account, .profile {
+    margin-top: 55px;
+    padding: 35px 36px;
+}
+.h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* .form-element {
+    margin-bottom: 20px;
+    width: 400px;
+    position: relative;
+} */
+/* .form-element span { 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: silver;
+    width: 40px;
+    border-radius: 0 5px 5px 0;
+    height: 40px;
+} */
+/* .form-element label {
+    position: absolute;
+    left: 16px;
+    font-size: 18px;
+    top: 6px;
+    color: #999;
+    background-color: #fff;
+    padding: 0 2px;
+    transition: all .2s ease;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=number],
+textarea,
+select {
+    height: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 0 15px;
+    width: 100%;
+}
+input[type=text]:focus + label,
+input[type=email]:focus + label,
+input[type=password]:focus + label,
+input[type=search]:focus + label,
+input[type=number]:focus + label,
+textarea:focus + label,
+input[type=text]:not(:placeholder-shown) + label,
+input[type=email]:not(:placeholder-shown) + label,
+input[type=password]:not(:placeholder-shown) + label,
+input[type=search]:not(:placeholder-shown) + label,
+input[type=number]:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+    top: -13px;
+    color: #222;
+    font-size: 14px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+textarea:focus {
+    outline: 0;
+    border-color: blue;
+}
+textarea {
+    height: 180px;
+    padding: 10px 15px;
+}
+.has-err input[type=text],
+.has-err input[type=email],
+.has-err input[type=password],
+.has-err input[type=search],
+.has-err input[type=number],
+.has-err textarea {
+    border-color: red;
+}
+input[type=text]:required + label::after,
+input[type=email]:required + label::after {
+    content: "*";
+    color: red;
+    display: inline-block;
+    margin-right: 5px;
+}
+.file-wrap {
+    height: 40px;
+}
+input[type=file] {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+}
+.fake-file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 18px;
+    border: 2px dashed blueviolet;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    line-height: 40px;
+    padding: 0 15px;
+} */
