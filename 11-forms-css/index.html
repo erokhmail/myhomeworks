@@ -6,185 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-forms css</title>
-    <link rel="stylesheet" href="assets/js/plugins/styler/jquery.formstyler.css">
-    <link rel="stylesheet" href="assets/js/plugins/styler/jquery.formstyler.theme.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style_home.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="account">
-            <h2 class="h2">Create an account</h2>
-            <form action="#" method="post" enctype="multipart/form-data" class="account-form" id="account"
-                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('account')))).toString()));return false;">
-                <div class="name">
-                    <div class="form-element">
-                        <label for="1">First name</label>
-                        <input type="text" name="first_name" placeholder=" " id="1" required>
+    <div class="wrapper">
+        <main>
+            <div class="container">
+                <div class="common-block">
+                    <div class="block block-left">
+                        <a href="account/index.html" target="_blank">Account</a>
                     </div>
-                    <div class="form-element">
-                        <label for="2">Last name</label>
-                        <input type="text" name="last_name" placeholder=" " id="2" required>
+                    <div class="block block-left">
+                        <a href="profile/index.html" target="_blank">Profile</a>
                     </div>
-                </div>
-                <div class="form-element">
-                    <label for="2">E-mail</label>
-                    <input type="email" name="email" placeholder=" " id="3" required>
-                    <div class="notification">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="form-element">
-                    <div class="radio-group">
-                        <div class="item-radio">
-                            <input type="radio" class="radio-data" id="4" name="gender" value="Male" checked />
-                            <label for="4" class="input__label">Male</label>
-                        </div>
-                        <div class="item-radio">
-                            <input type="radio" class="radio-data" id="5" name="gender" value="Female" />
-                            <label for="5" class="input__label">Female</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="location">
-                    <div class="form-element">
-                        <label for="6">First name</label>
-                        <select name="courses" class="input__color" id="6" required>
-                            <option value="">Select</option>
-                            <option value="frontend">Ukraine</option>
-                            <option value="python">Austria</option>
-                            <option value="c#">Cyprus</option>
-                            <option value="manual">Egypt</option>
-                            <option value="uiux">Morocco</option>
-                            <option value="manual">United Kingdon</option>
-                            <option value="digital">United States</option>
-                        </select>
-                    </div>
-                    <div class="form-element">
-                        <input type="text" name="city" placeholder=" " id="7">
-                        <label for="7">City</label>
-                    </div>
-                </div>
-                <div class="form-button">
-                    <button type="submit" class="btn-account">Sign Up</button>
-                </div>
-                <div class="additional-text">
-                    By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a> and
-                    <a href="#">Privacy Policy</a>.
-                </div>
-            </form>
-            <div class="bottom-text">
-                <div class="bottom-item">Have an account?</div>
-                <div class="bottom-link">
-                    <a href="#">Log in</a>
                 </div>
             </div>
-        </div>
-        <div class="profile">
-            <h2 class="h2">Create an account</h2>
-            <form action="#" method="post" enctype="multipart/form-data" class="profile-form" id="profile"
-                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('account')))).toString()));return false;">
-
-                <div class="profile-img">
-                    <div class="form-element">
-                        <img src="" alt="">
-                        <input type="file" name="file-img" placeholder=" " id="8">
-                    </div>
-                </div>
-                <div class="name">
-                    <div class="form-element">
-                        <label for="9">First name</label>
-                        <input type="text" name="first_name" placeholder=" " id="9" required>
-                    </div>
-                    <div class="form-element">
-                        <label for="10">E-mail</label>
-                        <input type="email" name="email" placeholder=" " id="10" required>
-                    </div>
-                </div>
-                <div class="location">
-                    <div class="form-element">
-                        <label for="11">First name</label>
-                        <select name="courses" class="input__color" id="11">
-                            <option value="">Select</option>
-                            <option value="frontend">Ukraine</option>
-                            <option value="python">Austria</option>
-                            <option value="c#">Cyprus</option>
-                            <option value="manual">Egypt</option>
-                            <option value="uiux">Morocco</option>
-                            <option value="manual">United Kingdon</option>
-                            <option value="digital">United States</option>
-                        </select>
-                    </div>
-                    <div class="form-element">
-                        <input type="text" name="city" placeholder=" " id="12">
-                        <label for="12">City</label>
-                    </div>
-                </div>
-                <div class="number">
-                    <div class="form-element">
-                        <label for="13">Zip code</label>
-                        <input type="text" name="zip_code" placeholder=" " id="13">
-                    </div>
-                    <div class="form-element">
-                        <label for="14">Phone number</label>
-                        <input type="tel" name="phone" placeholder=" " id="14">
-                    </div>
-                </div>
-                <div class="form-button">
-                    <button type="submit" class="btn-profile">Update</button>
-                </div>
-            </form>
-        </div>
-
-
-
-
-
-
-
-
-
-        <!-- <div class="form-element has-err">
-            
-            <input type="text" name="first_name" placeholder=" " required>
-            <label for="">First name</label>
-        </div>
-        <div class="form-element">
-            <select name="skill" id="">
-                <option value="">Css</option>
-                <option value="">HTML</option>
-                <option value="">Java</option>
-            </select>
-        </div>
-        <div class="form-element">
-            <input type="text" name="first_name" placeholder=" " disabled>
-            <label for="">First name</label>
-        </div>
-        <div class="form-element">
-            <input type="email" name="email" placeholder=" ">
-            <label for="">Email</label>
-        </div>
-        <div class="form-element file-wrap">
-            <input type="file" name="file">
-            <div class="fake-file">
-                Click or drag-n-drop file
-            </div>
-        </div>
-        <div class="form-element">
-            <input type="file" name="file">
-
-        </div>
-        <div class="form-element">
-            <textarea name="comments"></textarea>
-        </div> -->
+        </main>
     </div>
-
-    <script src="assets/js/jquery-3.6.4.min.js"></script>
-    <script src="assets/js/plugins/styler/jquery.formstyler.min.js"></script>
-    <script>
-        $(function () {
-            $('select, input[type="file"]').styler();
-        });
-    </script>
 </body>
 
 </html>

@@ -1,0 +1,109 @@
+@import 'font';
+$color: #123;
+
+@mixin font($size,$lh){
+    font-weight: 400;
+    font-size: $size;
+    line-height: $lh;
+    color: #555;
+}
+
+@mixin fz($size_px){
+    font-size: ($size_px / 16) * 1rem;
+}
+@mixin lh($lhsize_px){
+    line-height: ($lhsize_px  / 16) * 1rem;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: top;
+}
+
+body {
+    background-color: #fff;
+    color: #222;
+    @include fz(20);
+    @include lh(23.44);
+    font-weight: 500;
+    font-family: 'Roboto';
+}
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto
+}
+.title {
+    @include fz(36);
+    @include lh(45);
+    font-weight: normal;
+    font-family: 'Delius Unicase';
+    color: #000;
+    text-align: center;
+    margin-bottom: 80px;
+}
+#common {
+    padding: 120px 0 80px 0;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+    .double {
+        grid-column: span 2;
+    }
+    .card {
+        border-radius: 20px;
+        overflow: hidden;
+    }
+}
+
+
+
+#main-menu {
+    padding-top: 20px;
+    ul {
+        display: flex;
+        gap: 40px;
+        > li {
+            display: inline-block;
+            a {
+                color: tomato;
+                text-decoration: none;
+                @include font(22px, 32px); 
+                &:hover {
+                    color: darken(tomato, 20);
+                    // color: lighten(tomato, 20);
+                    &::before, &::after {
+                        width: 100%;
+                    }
+                }
+                &::before, &::after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: #000;
+                    transition: all .2s ease;
+
+                }
+                &::before{
+                    top: 0;
+                }
+                &::after {
+                    bottom: 0;
+                }
+            }
+
+        }
+    }
+}

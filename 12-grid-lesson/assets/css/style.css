@@ -1,0 +1,118 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto/roboto-v30-latin-regular.woff2") format("woff2"), url("../fonts/roboto/roboto-v30-latin-regular.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/roboto/roboto-v30-latin-500.woff2") format("woff2"), url("../fonts/roboto/roboto-v30-latin-500.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: "Delius Unicase";
+  src: url("../fonts/delius/DeliusUnicase-Regular.woff2") format("woff2"), url("../fonts/delius/DeliusUnicase-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  font-size: 1.25rem;
+  line-height: 1.465rem;
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+.container {
+  width: min(90%, 1170px);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.8125rem;
+  font-weight: normal;
+  font-family: "Delius Unicase";
+  color: #000;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+#common {
+  padding: 120px 0 80px 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
+.wrapper .double {
+  grid-column: span 2;
+}
+.wrapper .card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#main-menu {
+  padding-top: 20px;
+}
+#main-menu ul {
+  display: flex;
+  gap: 40px;
+}
+#main-menu ul > li {
+  display: inline-block;
+}
+#main-menu ul > li a {
+  color: tomato;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  color: #555;
+}
+#main-menu ul > li a:hover {
+  color: #e02200;
+}
+#main-menu ul > li a:hover::before, #main-menu ul > li a:hover::after {
+  width: 100%;
+}
+#main-menu ul > li a::before, #main-menu ul > li a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: all 0.2s ease;
+}
+#main-menu ul > li a::before {
+  top: 0;
+}
+#main-menu ul > li a::after {
+  bottom: 0;
+}
