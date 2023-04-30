@@ -154,7 +154,7 @@ h1 {
   display: block;
   position: relative;
   margin: 0 auto;
-  top: 22px;
+  top: 20px;
   width: 100px;
   height: 1px;
   background-color: #fc0;
@@ -165,7 +165,7 @@ h1 {
   color: #666;
   text-transform: capitalize;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 .column-descr .social-media-list {
   display: flex;
