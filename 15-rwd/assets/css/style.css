@@ -263,6 +263,10 @@ body {
   flex-basis: 50%;
 }
 .section-content .wrap-big .vertical-wrap .post-wrap.w-big .sub-info {
+  font-size: 1rem;
+  line-height: 1.66rem;
+  letter-spacing: 0.07rem;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .section-content .wrap-big .vertical-wrap .post-wrap.w-big .post-wrap-title {

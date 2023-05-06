@@ -221,6 +221,10 @@ body {
                 &.w-big {
                     flex-basis: 50%;
                     .sub-info {
+                        font-size: 1rem;
+                        line-height: 1.66rem;
+                        letter-spacing: .07rem;
+                        margin-top: 30px;
                         margin-bottom: 20px;
                     }
                     .post-wrap-title {
