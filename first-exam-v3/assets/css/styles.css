@@ -239,9 +239,6 @@ header a {
   color: #262A3F;
   margin-bottom: 20px;
 }
-.section-first .banner-text .btn-link a {
-  z-index: -1;
-}
 .section-first .additional-text {
   padding-right: 20px;
   margin-bottom: 48px;
@@ -842,9 +839,6 @@ header a {
 .dark body .btn-link a:hover::after, .dark body .btn-link a.active::after, .dark body .btn-link button:hover::after, .dark body .btn-link button.active::after {
   background-color: #02E0AB;
 }
-.dark body .btn-link a {
-  z-index: -1;
-}
 .dark body .bg-quote svg {
   -webkit-filter: invert(1);
   filter: invert(1);
@@ -1146,6 +1140,9 @@ header a {
   }
   #section-first .banner-text {
     margin-bottom: 80px;
+  }
+  #section-first .banner-text .btn-link a {
+    z-index: -1;
   }
   #section-first .outer {
     -webkit-box-orient: vertical;

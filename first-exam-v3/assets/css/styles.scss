@@ -185,11 +185,7 @@ header {
       color: $color-font;
       margin-bottom: 20px;
     }
-    .btn-link {
-      a {
-        z-index: -1;
-      }
-    }
+    
   }
   .additional-text {
     padding-right: 20px;
@@ -802,9 +798,7 @@ header {
           }
         }
       }
-      a {
-        z-index: -1;
-      }
+      
     }
     .bg-quote {
       svg {
@@ -1126,6 +1120,11 @@ header {
     }
     .banner-text {
       margin-bottom: 80px;
+      .btn-link {
+        a {
+          z-index: -1;
+        }
+      }
     }
     
     .outer {

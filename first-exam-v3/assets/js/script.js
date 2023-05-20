@@ -10,10 +10,10 @@ const lazyLoadInstance = new LazyLoad({});
     })
     wow.init();
 
-if (window.matchMedia('(preferes-color-scheme: dark)').matches) {
-    document.children[0].classList.toggle('dark');
-    }
+// if (window.matchMedia('(preferes-color-scheme: dark)').matches) {
+//     document.children[0].classList.toggle('dark');
+//     }
 
-    window.matchMedia('(preferes-color-scheme: dark)').addEventListener('change', event => {
-    document.children[0].classList.toggle('dark');
-    });
+//     window.matchMedia('(preferes-color-scheme: dark)').addEventListener('change', event => {
+//     document.children[0].classList.toggle('dark');
+//     });
