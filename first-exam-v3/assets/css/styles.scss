@@ -185,6 +185,11 @@ header {
       color: $color-font;
       margin-bottom: 20px;
     }
+    .btn-link {
+      a {
+        z-index: -1;
+      }
+    }
   }
   .additional-text {
     padding-right: 20px;
@@ -295,6 +300,7 @@ header {
     -webkit-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
+    
     &::after {
       content: '';
       position: absolute;
@@ -311,6 +317,7 @@ header {
         background-color: #E54F3A;
       }
     }
+    
   }
 }
 
@@ -736,8 +743,13 @@ header {
 }
 
 /*-====================#Footer====================-*/
-/*-=========#Dark====================-*/
+/*-=========Dark====================-*/
 .dark {
+  header {
+    background: -webkit-gradient(linear, right top, left top, from(rgba(38, 42, 62, 0.5)), color-stop(24.1%, rgba(255, 255, 255, 0.244636)), color-stop(47.19%, rgba(255, 255, 255, 0))), rgba(255, 255, 255, 0.02);
+    background: -o-linear-gradient(right, rgba(38, 42, 62, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+    background: linear-gradient(270deg, rgba(38, 42, 62, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+  }
   body {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgb(16, 19, 26);
@@ -778,7 +790,8 @@ header {
     }
     .btn-link {
       a, button {
-        color: #53F3CD;        
+        color: #53F3CD;   
+             
         &::after {
           background-color: #53F3CD;
         }
@@ -788,6 +801,9 @@ header {
             background-color: #02E0AB;
           }
         }
+      }
+      a {
+        z-index: -1;
       }
     }
     .bg-quote {
@@ -884,7 +900,49 @@ header {
     }   
   }      
 }
-/*-=========#Dark====================-*/
+/*-====================#Dark====================-*/
+/*-====================SWITCHER====================-*/
+.theme-switch {
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    width: 80px;
+    height: 26px;
+    background: rgba(38, 42, 63, .6);
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    top: 6px;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+  }
+  
+  input:checked + label {
+    background: rgba(255, 255, 255, .8);
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    background: rgba(38, 42, 63, .6);
+  }
+}
+/*-====================#SWITCHER====================-*/
 
 .mb-30 {
   margin-bottom: 30px;
@@ -947,6 +1005,9 @@ header {
   }
 }
 @media screen and (max-width: 768px) {
+  .theme-switch {
+    margin-left: -8px;
+  }
   main {
     margin-top: -60px;
   }

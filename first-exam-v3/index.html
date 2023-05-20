@@ -52,6 +52,10 @@
             <li>
               <a href="#" title="Resources" class="menu-link">Resources</a>
             </li>
+            <li class="theme-switch">
+              <input type="checkbox" id="theme-switch">
+              <label for="theme-switch"></label>
+            </li>
           </ul>
         </nav>
 
@@ -76,6 +80,10 @@
                 </li>
                 <li>
                   <a href="#" title="Resources" class="menu-link">Resources</a>
+                </li>
+                <li class="theme-switch">
+                  <input type="checkbox" id="theme-switch">
+                  <label for="theme-switch"></label>
                 </li>
               </ul>
             </nav>
@@ -346,7 +354,13 @@
     })
 
   </script>
+  <script>
+    document.getElementById("theme-switch").addEventListener('change', function () {
+      document.children[0].classList.toggle('dark');
+    })
 
+
+  </script>
   <script src="assets/js/script.js"></script>
 
 </body>

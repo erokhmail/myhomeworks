@@ -239,6 +239,9 @@ header a {
   color: #262A3F;
   margin-bottom: 20px;
 }
+.section-first .banner-text .btn-link a {
+  z-index: -1;
+}
 .section-first .additional-text {
   padding-right: 20px;
   margin-bottom: 48px;
@@ -790,7 +793,12 @@ header a {
 }
 
 /*-====================#Footer====================-*/
-/*-=========#Dark====================-*/
+/*-=========Dark====================-*/
+.dark header {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(38, 42, 62, 0.5)), color-stop(24.1%, rgba(255, 255, 255, 0.244636)), color-stop(47.19%, rgba(255, 255, 255, 0))), rgba(255, 255, 255, 0.02);
+  background: -o-linear-gradient(right, rgba(38, 42, 62, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+  background: linear-gradient(270deg, rgba(38, 42, 62, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+}
 .dark body {
   color: rgba(255, 255, 255, 0.8);
   background-color: #10131a;
@@ -833,6 +841,9 @@ header a {
 }
 .dark body .btn-link a:hover::after, .dark body .btn-link a.active::after, .dark body .btn-link button:hover::after, .dark body .btn-link button.active::after {
   background-color: #02E0AB;
+}
+.dark body .btn-link a {
+  z-index: -1;
 }
 .dark body .bg-quote svg {
   -webkit-filter: invert(1);
@@ -920,7 +931,44 @@ header a {
   bottom: -40px;
 }
 
-/*-=========#Dark====================-*/
+/*-====================#Dark====================-*/
+/*-====================SWITCHER====================-*/
+.theme-switch input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.theme-switch label {
+  cursor: pointer;
+  width: 80px;
+  height: 26px;
+  background: rgba(38, 42, 63, 0.6);
+  display: inline-block;
+  border-radius: 20px;
+  position: relative;
+  top: 6px;
+}
+.theme-switch label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.theme-switch input:checked + label {
+  background: rgba(255, 255, 255, 0.8);
+}
+.theme-switch input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  background: rgba(38, 42, 63, 0.6);
+}
+
+/*-====================#SWITCHER====================-*/
 .mb-30 {
   margin-bottom: 30px;
 }
@@ -973,6 +1021,10 @@ header a {
   }
 }
 @media screen and (max-width: 768px) {
+  .theme-switch {
+    margin-left: -8px;
+  }
+
   main {
     margin-top: -60px;
   }
