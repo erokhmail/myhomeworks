@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.img-wrap {
+  /*spivvidnoshennya storin*/
+  /*dlya zobrazhennya 570*470*/
+  /**або одразу коефыцыэнт*/
+  aspect-ratio: 57/47;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: lightblue;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
