@@ -807,6 +807,19 @@ header {
     }
     .white-block {
       background-color: rgba(22, 25, 38, .8);
+      .white-item {
+        .btn-link {
+          &:hover {
+            border-color: #02E0AB;
+            button {
+              color: #02E0AB;
+              &::after {
+                background-color: #02E0AB;
+              }
+            }
+          }
+        }
+      }
     }
     .contacts, .footer-container {
       border-top: 1px solid #515773;

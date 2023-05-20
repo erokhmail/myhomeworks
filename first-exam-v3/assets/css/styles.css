@@ -850,6 +850,15 @@ header a {
 .dark body .white-block {
   background-color: rgba(22, 25, 38, 0.8);
 }
+.dark body .white-block .white-item .btn-link:hover {
+  border-color: #02E0AB;
+}
+.dark body .white-block .white-item .btn-link:hover button {
+  color: #02E0AB;
+}
+.dark body .white-block .white-item .btn-link:hover button::after {
+  background-color: #02E0AB;
+}
 .dark body .contacts, .dark body .footer-container {
   border-top: 1px solid #515773;
 }
