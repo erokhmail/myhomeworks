@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Основи JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <main>
+      <div class="container pt-4">
+        <div class="row gx-4">
+          <div class="col-lg-6 col-xs-12">
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 1</h5>
+              <div class="card-body">
+                <p class="card-text">Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді</p>
+                <p class="card-text"><b>Результат:</b> <span id="sum-result-1"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="sumResult()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 2</h5>
+              <div class="card-body">
+                <p class="card-text">Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в змінних),
+                  добийся математично правильної відповіді.</p>
+                <p class="card-text"><b>Результат:</b> <span id="sum-result-2"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="sumStr()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 3</h5>
+              <div class="card-body">
+                <p class="card-text">Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки файлів
+                  розміром в 820 Мб поміщається на флешку.</p>
+                <div class="input-group mb-4">
+                  <label for="flesh-data" class="mb-4">Вкажіть обсяг флешки в Гб</label>
+                  <input type="number" id="flesh-data" class="form-control">
+                </div>
+                <p class="card-text"><b>Результат:</b> <span id="flesh-result-3"></span></p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="fleshRes()">Запустити</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xs-12">
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 4</h5>
+              <div class="card-body">
+                <p class="card-text">Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма виводить
+                  скільки шоколадок може купити користувач і скільки здачі у нього залишиться.</p>
+                <div class="input-group mb-4">
+                  <label for="amount-data" class="mb-4">Вкажіть допустимий бюджет</label>
+                  <input type="number" id="amount-data" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="cost" class="mb-4">Вкажіть вартість шоколадки</label>
+                  <input type="number" id="cost" class="form-control">
+                </div>
+                <p class="card-text"><b>Кількість шоколадок:</b> <span id="quantity"></span></p>
+                <p class="card-text"><b>Решта від суми:</b> <span id="rest-amount"></span></p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="chocolateCalc()">Запустити</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </main>
+
+  </div>
+  <script src="assets/js/main.js"></script>
+
+</html>

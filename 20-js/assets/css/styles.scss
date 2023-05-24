@@ -1,0 +1,81 @@
+$color-font: #232323;
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin fz($px_size) {
+  font-size: ($px_size / 16) * 1rem;
+}
+
+@mixin lh($px_size) {
+  line-height: ($px_size / 16) * 1rem;
+}
+
+body {
+  font-family: sans-serif;
+  @include fz(16);
+  @include lh(20);
+  color: $color-font;
+  background: linear-gradient(-45deg, #c9e9fc, #69ffc6, #23a6d5, #21d55d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, button {
+  transition: all .2s ease;
+}
+
+.container {
+  width: min(90%, 1400px);
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+.card-body {
+  min-height: 100px;
+}
