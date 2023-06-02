@@ -47,3 +47,15 @@ function chocolateCalc() {
   var resultRest = +(amount - cost * result).toFixed(2);
   document.getElementById("rest-amount").innerText = resultRest;
 }
+
+function backWards() {
+  var triple = document.getElementById("triple-data").valueAsNumber;
+
+  if (isNaN(triple)) {
+    document.getElementById("triple-data").innerHTML = '<i style="color: red">Введіть коректне значення</i>';
+    return false;
+  } else if (triple >= 100 && triple <= 999) {
+    var result = triple % 10 * 100 + Math.trunc(triple % 100 / 10) * 10 + Math.trunc(triple / 100);
+    document.getElementById("triple-result").innerText = result;
+  }
+}
