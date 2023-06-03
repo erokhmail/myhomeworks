@@ -59,3 +59,18 @@ function backWards() {
     document.getElementById("triple-result").innerText = result;
   }
 }
+
+function sumPerc() {
+  var sum = document.getElementById("vklad-data").valueAsNumber;
+
+  if (isNaN(sum)) {
+    document.getElementById("vklad-data").innerHTML = '<i style="color: red">Введіть коректне значення</i>';
+    return false;
+  }
+
+  var firstMonth = +(sum * 0.05 / 12).toFixed(2);
+  var secondMonth = +((sum + firstMonth) * 0.05 / 12).toFixed(2); // let result = firstMonth + secondMonth;
+
+  var result = firstMonth + secondMonth;
+  document.getElementById("vklad-result").innerText = result;
+}

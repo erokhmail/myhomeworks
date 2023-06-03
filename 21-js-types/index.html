@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Основи JavaScript</title>
+  <title>Типи даних та оператори - JavaScript</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -53,8 +53,6 @@
                 <button type="button" class="btn btn-primary" onclick="fleshRes()">Запустити</button>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-xs-12">
             <div class="card mb-4">
               <h5 class="card-header">Завдання 4</h5>
               <div class="card-body">
@@ -75,6 +73,9 @@
                 <button type="button" class="btn btn-primary" onclick="chocolateCalc()">Запустити</button>
               </div>
             </div>
+
+          </div>
+          <div class="col-lg-6 col-xs-12">
             <div class="card mb-4">
               <h5 class="card-header">Завдання 5</h5>
               <div class="card-body">
@@ -89,6 +90,33 @@
               <div class="card-footer">
                 <button type="button" class="btn btn-primary" onclick="backWards()">Запустити</button>
               </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 6</h5>
+              <div class="card-body">
+                <p class="card-text">Користувач вводить суму вкладу в банк на 2 місяці, з відсоткова ставкою депозиту 5%
+                  річних (з накопичуванням відсотків). Вивести суму нарахованих відсотків.</p>
+                <div class="input-group mb-4">
+                  <label for="vklad-data" class="mb-4">Вкажіть суму вкладу</label>
+                  <input type="number" id="vklad-data" class="form-control">
+                </div>
+                <p class="card-text"><b>Сума нарахованих відсотків:</b> <span id="vklad-result"></span></p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="sumPerc()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 7</h5>
+              <div class="card-body">
+                <p class="card-text">Що повернуть вирази:</p>
+                <p class="card-text"> 2 && 0 && 3 <br><b>Результат:</b> False</p>
+                <p class="card-text"> 2 || 0 || 3 <br><b>Результат:</b> True</p>
+                <p class="card-text"> 2 && 0 || 3 <br><b>Результат:</b> True</p>
+
+
+              </div>
+
             </div>
           </div>
 
