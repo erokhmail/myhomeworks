@@ -207,9 +207,9 @@ ul li:nth-child(5n + 5) a::before {
     }
 
 }
-/* .content {
+.content {
     display: flex;
 }
 .content1 {
     width: 50%;
-} */
+}
