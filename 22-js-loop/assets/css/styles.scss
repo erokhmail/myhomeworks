@@ -84,3 +84,8 @@ main {
     width: 100%;
   }
 }
+#table-result {
+  td:first-of-type {
+    font-weight: bold;
+  }
+}

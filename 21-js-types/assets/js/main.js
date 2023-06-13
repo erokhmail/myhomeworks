@@ -72,7 +72,6 @@ function sumPerc() {
     }
         let firstMonth = +(sum * 0.05 / 12).toFixed(2);
         let secondMonth = +((sum + firstMonth) * 0.05 / 12).toFixed(2);
-        // let result = firstMonth + secondMonth;
         let result = firstMonth + secondMonth;
         document.getElementById("vklad-result").innerText = result; 
 

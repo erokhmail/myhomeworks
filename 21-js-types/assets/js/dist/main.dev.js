@@ -69,8 +69,7 @@ function sumPerc() {
   }
 
   var firstMonth = +(sum * 0.05 / 12).toFixed(2);
-  var secondMonth = +((sum + firstMonth) * 0.05 / 12).toFixed(2); // let result = firstMonth + secondMonth;
-
+  var secondMonth = +((sum + firstMonth) * 0.05 / 12).toFixed(2);
   var result = firstMonth + secondMonth;
   document.getElementById("vklad-result").innerText = result;
 }
