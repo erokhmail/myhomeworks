@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Функції JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <main>
+      <div class="container pt-4">
+        <div class="row gx-4">
+          <div class="col-lg-6 col-xs-12">
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 1</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши всі можливі варіанти створення функцій.</p>
+                <p class="card-text"><b>Варіант 1: класичне декларування</b></p>
+                <p class="card-text"><b>function funcName(arg1, arg2) {</b><br>
+                  тіло функції<br>
+                  <b> }</b>
+                </p>
+                <p class="card-text"><b>Варіант 2: Function Expression - функціональний вираз </b></p>
+                <p class="card-text"><b>let name = funcName(arg1, arg2) {</b><br>
+                  тіло функції<br>
+                  <b> }</b>
+                </p>
+              </div>
+
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 2</h5>
+              <div class="card-body">
+                <p class="card-text">Створи функцію, яка буде виводити кількість переданих їй аргументів.</p>
+                <div class="input-group mb-4">
+                  <label for="arg-first" class="mb-4">Введіть перший аргумент:</label>
+                  <input type="number" id="arg-first" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="arg-second" class="mb-4">Введіть перший аргумент</label>
+                  <input type="number" id="arg-second" class="form-control">
+                </div>
+                <p class="card-text"><b>Кількість введених аргументів:</b> <span id="arg-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="argumentCalc()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 3</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка приймає 2 числа і повертає :<br>
+                  -1, якщо перше число менше, ніж друге; <br>
+                  1 - якщо перше число більше, ніж друге; <br>
+                  0 - якщо числа рівні.</p>
+                <div class="input-group mb-4">
+                  <label for="comp-first" class="mb-4">Введіть перше число:</label>
+                  <input type="number" id="comp-first" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="comp-second" class="mb-4">Введіть друге число:</label>
+                  <input type="number" id="comp-second" class="form-control">
+                </div>
+                <p class="card-text"><b>Результат</b> <span id="comp-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="compareRes()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 4</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка обчислює факторіал переданого їй числа.</p>
+                <div class="input-group mb-4">
+                  <label for="fac-num" class="mb-4">Введіть число:</label>
+                  <input type="number" id="fac-num" class="form-control">
+                </div>
+
+                <p class="card-text"><b>Результат</b> <span id="fac-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="factorialRes()">Запустити</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xs-12">
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 5</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число.
+                  Наприклад: цифри 1, 4, 9 перетворяться в число 149.</p>
+                <div class="input-group mb-4">
+                  <label for="three-one" class="mb-4">Введіть перше число:</label>
+                  <input type="number" id="three-one" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="three-two" class="mb-4">Введіть друге число:</label>
+                  <input type="number" id="three-two" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="three-three" class="mb-4">Введіть третє число:</label>
+                  <input type="number" id="three-three" class="form-control">
+                </div>
+
+                <p class="card-text"><b>Результат</b> <span id="three-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="threeSumRes()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 6</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу.
+                  Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.</p>
+                <div class="input-group mb-4">
+                  <label for="length" class="mb-4">Вкажіть довжину прямокутника:</label>
+                  <input type="number" id="length" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="width" class="mb-4">Вкажіть ширину прямокутника</label>
+                  <input type="number" id="width" class="form-control">
+                </div>
+
+
+                <p class="card-text"><b>Результат</b> <span id="square-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="squareRes()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 7</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”.
+                  Досконале число - це число, яке дорівнює сумі всіх своїх дільників.</p>
+                <div class="input-group mb-4">
+                  <label for="per-number" class="mb-4">Вкажіть число:</label>
+                  <input type="number" id="per-number" class="form-control">
+                </div>
+                <p class="card-text"><b>Результат</b> <span id="perfect-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="perfectRes()">Запустити</button>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <h5 class="card-header">Завдання 8</h5>
+              <div class="card-body">
+                <p class="card-text">Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і
+                  виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб
+                  дізнатися, чи є це число досконалим.</p>
+                <div class="input-group mb-4">
+                  <label for="min-number" class="mb-4">Вкажіть мінімальне значення діапазону:</label>
+                  <input type="number" id="min-number" class="form-control">
+                </div>
+                <div class="input-group mb-4">
+                  <label for="max-number" class="mb-4">Вкажіть максимальне значення діапазону:</label>
+                  <input type="number" id="max-number" class="form-control">
+                </div>
+                <p class="card-text"><b>Результат</b> <span id="minmax-result"></span> </p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-primary" onclick="minmaxRes()">Запустити</button>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+        </div>
+
+
+
+      </div>
+
+    </main>
+
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
