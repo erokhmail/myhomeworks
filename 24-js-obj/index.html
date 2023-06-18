@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Об'єкти JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <main>
+      <div class="container pt-4">
+        <div class="row gx-4">
+          <div class="col-lg-6 col-xs-12">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="" id="avto_info"></div>
+                <div class="count mb-4">
+                  <p>Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою
+                    швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину.
+                  </p>
+                  <div class="input-group mb-4">
+                    <label for="distance_km" class="mb-4">Вкажіть відстань в км:</label>
+                    <input type="number" id="distance_km" class="form-control">
+                  </div>
+                  <div class="" id="calc_time"></div>
+                  <div class="" id="calc_fuel"></div>
+                  <div class="" id="error"></div>
+                  <button type="button" class="btn btn-primary" onclick="CAR.calcData()">Розрахувати</button>
+                </div>
+                <div class="mb-4">
+                  <div class="input-group mb-4">
+                    <label for="d-name" class="mb-4">Вкажіть ім'я нового водія</label>
+                    <input type="text" id="d-name" class="form-control">
+                  </div>
+                  <div class="" id="error-dr"></div>
+                  <button type="button" class="btn btn-primary" onclick="pullDr()">Додати водія</button>
+                </div>
+                <div class="mb-4">
+                  <div class="input-group mb-4">
+                    <label for="d-name-search" class="mb-4">Вкажіть ім'я водія, для перевірки чи є він в списку:</label>
+                    <input type="text" id="d-name-search" class="form-control">
+                  </div>
+                  <div class="" id="error-search-dr"></div>
+                  <button type="button" class="btn btn-primary" onclick="CAR.searchDriver()">Шукати водія</button>
+                </div>
+              </div>
+
+              <div class="card-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

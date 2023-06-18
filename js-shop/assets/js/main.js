@@ -1,5 +1,6 @@
 let CART = [
     {
+        id:1234,
        name: 'Milk',
        price: 30.00,
        qty: 2,
@@ -7,6 +8,7 @@ let CART = [
        isBuy: false
     },
     {
+        id:5678,
         name: 'Apple',
         price: 10.25,
         qty: 3,
@@ -19,6 +21,12 @@ function addToCard() {
     const name = document.getElementById("prod_name").value;
     const qty = document.getElementById("prod_qty").valueAsNumber;
     const price = document.getElementById("prod_price").valueAsNumber;
+    
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+      }
 
 if (name === '' || isNaN(price) || isNaN(qty)){
 //  alert("Enter product info");
@@ -35,6 +43,7 @@ if(ind !== -1){
 } else {
     CART.push({
         // name: name,
+        id: getRandomIntInclusive(1000,9999),
         name,
         // qty: qty,
         qty,
