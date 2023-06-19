@@ -9,8 +9,23 @@ body {
   font-size: 1rem;
   line-height: 1.25rem;
   color: #232323;
+  background: linear-gradient(-45deg, #c9e9fc, #69ffc6, #23a6d5, #21d55d);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 img {
   vertical-align: top;
   width: 100%;
@@ -52,15 +67,22 @@ main {
   flex-grow: 1;
 }
 
-.card {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .card-body {
   min-height: 100px;
 }
 
 .input-group label {
   width: 100%;
+}
+
+.card {
+  border: 0;
+  border-radius: 15px;
+  padding: 2rem;
+}
+.card ul {
+  padding-left: 0;
+}
+.card .card-footer {
+  background: 0;
 }

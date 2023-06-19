@@ -1,16 +1,25 @@
 "use strict";
 
 var CART = [{
+  id: 1234,
   name: 'Milk',
   price: 30.00,
   qty: 2,
   total: 60.00,
   isBuy: false
 }, {
-  name: 'Apple',
-  price: 10.25,
+  id: 4545,
+  name: 'Bread',
   qty: 3,
-  total: 30.75,
+  price: 10.00,
+  total: 30.00,
+  isBuy: false
+}, {
+  id: 6464,
+  name: 'Cheese',
+  qty: 1,
+  price: 55.00,
+  total: 55.00,
   isBuy: false
 }];
 
@@ -18,6 +27,12 @@ function addToCard() {
   var name = document.getElementById("prod_name").value;
   var qty = document.getElementById("prod_qty").valueAsNumber;
   var price = document.getElementById("prod_price").valueAsNumber;
+
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  }
 
   if (name === '' || isNaN(price) || isNaN(qty)) {
     //  alert("Enter product info");
@@ -36,6 +51,7 @@ function addToCard() {
   } else {
     CART.push({
       // name: name,
+      id: getRandomIntInclusive(1000, 9999),
       name: name,
       // qty: qty,
       qty: qty,
@@ -46,51 +62,70 @@ function addToCard() {
     });
   }
 
+  ;
   document.getElementById("prod_name").value = '';
   document.getElementById("prod_name").value = 1;
   document.getElementById("prod_name").value = ''; // alert('Successfully added to cart');
 
   toast.success('Successfully added to cart');
-  viewCartList();
-  console.log(CART);
+  viewCartList(); //console.log(CART)
 }
 
-function buyProduct(index) {
+function buyProduct($btn) {
+  var tr = $btn.closest('tr');
+  var id = +tr.dataset.id;
+  var index = CART.findIndex(function (product) {
+    return product.id === id;
+  });
   CART[index].isBuy = true;
-  toast.info('Product is bought');
-  viewCartList();
+  tr.children[1].innerHTML = '<span class="badge text-bg-success">Bought</span>';
+  tr.children[tr.children.length - 1].innerText = '';
+  toast.info('Product is bought'); // viewCartList();
 }
 
-function removeProduct(index) {
+function removeProduct($btn) {
   if (confirm('Delete product?')) {
+    var id = +$btn.closest('tr').dataset.id;
+    var index = CART.findIndex(function (product) {
+      return product.id === id;
+    });
     CART.splice(index, 1);
-    toast.info('Product removed');
-    viewCartList();
+    $btn.closest('tr').remove();
+    toast.success('Product is removed'); // viewCartList();
   }
 }
 
-function changeProductQty(index, operator) {
+function changeProductQty($btn) {
+  var operator = $btn.dataset.change;
+  var tr = $btn.closest('tr');
+  var id = +tr.dataset.id;
+  var index = CART.findIndex(function (product) {
+    return product.id === id;
+  });
+
   if (operator === 'plus') {
     CART[index].qty++;
   } else {
     CART[index].qty--;
 
     if (CART[index].qty === 0) {
-      removeProduct(index);
-      return;
+      var removeBtn = tr.querySelector('.btn-danger');
+      removeProduct(removeBtn);
+      return false;
     }
   }
 
   CART[index].isBuy = false;
-  CART[index].total = CART[index].qty * CART[index].price;
-  viewCartList();
+  CART[index].total = CART[index].qty * CART[index].price; // viewCartList();
+
+  tr.querySelector('.form-control').value = CART[index].qty;
+  tr.querySelector('.total').innerText = CART[index].total.toFixed(2);
 }
 
 function viewCartList() {
   var tBody = '';
-  CART.forEach(function (product, index) {
-    var badge = product.isBuy ? '<span class="badge bg-success">Bought</span>' : '<span class="badge bg-danger">Didn\'t buy</span>';
-    tBody += "        \n        <tr>\n            <td>".concat(product.name, "</td>\n            <td>").concat(badge, "</td>\n            <td>\n                <div class=\"input-group mb-3\">\n                    <button class=\"btn btn-outline-secondary\" type=\"button\" onclick=\"changeProductQty(").concat(index, ",'minus')\">-</button>\n                    <input type=\"number\" class=\"form-control\" placeholder=\"\" aria-label=\"Example text with two button addons\" value=\"").concat(product.qty, "\" readonly>\n                    <button class=\"btn btn-outline-secondary\" type=\"button\" onclick=\"changeProductQty(").concat(index, ",'plus')\">+</button>\n                </div>  \n            </td>\n            <td>").concat(product.price.toFixed(2), "</td>\n            <td>").concat(product.total.toFixed(2), "</td>\n            <td>\n            ").concat(!product.isBuy ? '<button type="button" class="btn btn-warning" onclick="buyProduct(' + index + ')">Buy</button>' : '', "\n            ").concat(!product.isBuy ? '<button type="button" class="btn btn-danger" onclick="removeProduct(' + index + ')">Delete</button>' : '', "\n            </td>\n        </tr>");
+  CART.forEach(function (product) {
+    tBody += cartListRow(product);
   });
   document.getElementById('cart_tbody').innerHTML = tBody;
   var totals = calcTotal();
@@ -100,6 +135,12 @@ function viewCartList() {
 }
 
 ;
+
+function cartListRow(product) {
+  var badge = product.isBuy ? '<span class="badge bg-success">Bought</span>' : '<span class="badge bg-danger">Didn\'t buy</span>';
+  return "        \n        <tr data-id=\"".concat(product.id, "\">\n            <td>").concat(product.name, "</td>\n            <td>").concat(badge, "</td>\n            <td>\n                <div class=\"input-group mb-3\">\n                    <button class=\"btn btn-outline-secondary\" type=\"button\" onclick=\"changeProductQty(this)\" data-change=\"minus\">-</button>\n                    <input type=\"number\" class=\"form-control\" placeholder=\"\" aria-label=\"Example text with two button addons\" value=\"").concat(product.qty, "\" readonly>\n                    <button class=\"btn btn-outline-secondary\" type=\"button\" onclick=\"changeProductQty(this)\" data-change=\"plus\">+</button>\n                </div>  \n            </td>\n            <td>").concat(product.price.toFixed(2), "</td>\n            <td class=\"total\">").concat(product.total.toFixed(2), "</td>\n            <td>\n            ").concat(!product.isBuy ? '<button type="button" class="btn btn-warning" onclick="buyProduct(this)">Buy</button>' : '', "\n            ").concat(!product.isBuy ? '<button type="button" class="btn btn-danger" onclick="removeProduct(this)">Delete</button>' : '', "\n            </td>\n        </tr>");
+}
+
 viewCartList();
 
 function calcTotal() {

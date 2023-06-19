@@ -8,13 +8,21 @@ let CART = [
        isBuy: false
     },
     {
-        id:5678,
-        name: 'Apple',
-        price: 10.25,
+        id:4545,
+        name: 'Bread',
         qty: 3,
-        total: 30.75,
-        isBuy: false
-     }
+        price: 10.00,
+        total: 30.00,
+        isBuy: false,
+      },
+      {
+        id:6464,
+        name: 'Cheese',
+        qty: 1,
+        price: 55.00,
+        total: 55.00,
+        isBuy: false,
+      }
 ];
 
 function addToCard() {
@@ -52,7 +60,7 @@ if(ind !== -1){
         total: qty * price,
         isBuy: false
     });
-}
+};
     document.getElementById("prod_name").value = '';
     document.getElementById("prod_name").value = 1;
     document.getElementById("prod_name").value = '';
@@ -61,75 +69,99 @@ if(ind !== -1){
 toast.success('Successfully added to cart');
 
     viewCartList();
-    console.log(CART)
+    //console.log(CART)
 }
 
 
-function buyProduct(index) {
+function buyProduct($btn) {
+    const tr = $btn.closest('tr');
+    const id = +tr.dataset.id;
+    const index = CART.findIndex((product) => product.id === id);
+
     CART[index].isBuy = true;
 
-    toast.info('Product is bought')
+    tr.children[1].innerHTML = '<span class="badge text-bg-success">Bought</span>';
+    tr.children[tr.children.length - 1].innerText = '';
+    
+    toast.info('Product is bought');
 
-    viewCartList();
+    // viewCartList();
 }
 
-function removeProduct(index) {
-    if (confirm('Delete product?')){
+function removeProduct($btn) {
+    if (confirm('Delete product?')) {
+        const id = +$btn.closest('tr').dataset.id;
+        const index = CART.findIndex((product) => product.id === id);
         CART.splice(index, 1);
+    
+        $btn.closest('tr').remove();
+        toast.success('Product is removed');
 
-        toast.info('Product removed');
-
-        viewCartList();
+       // viewCartList();
     }
 }
 
-function changeProductQty(index, operator) {
+function changeProductQty($btn) {
+    const operator = $btn.dataset.change;
+    const tr = $btn.closest('tr');
+    const id = +tr.dataset.id;
+    const index = CART.findIndex((product) => product.id === id);
+
+
     if (operator === 'plus') {
         CART[index].qty++;
     } else {
         CART[index].qty--;
         if (CART[index].qty === 0) {
-            removeProduct(index);
-            return ;
+            const removeBtn = tr.querySelector('.btn-danger');
+            removeProduct(removeBtn);
+            return false;
         }
     }
     CART[index].isBuy = false;
     CART[index].total = CART[index].qty * CART[index].price;
 
-    viewCartList();
+    // viewCartList();
+    tr.querySelector('.form-control').value = CART[index].qty;
+    tr.querySelector('.total').innerText = CART[index].total.toFixed(2);
 }
 
 function viewCartList() {
     let tBody = '';
-   
 
-    CART.forEach(function(product, index){
-        let badge = product.isBuy ? '<span class="badge bg-success">Bought</span>' : '<span class="badge bg-danger">Didn\'t buy</span>';
-        tBody += `        
-        <tr>
-            <td>${product.name}</td>
-            <td>${badge}</td>
-            <td>
-                <div class="input-group mb-3">
-                    <button class="btn btn-outline-secondary" type="button" onclick="changeProductQty(${index},'minus')">-</button>
-                    <input type="number" class="form-control" placeholder="" aria-label="Example text with two button addons" value="${product.qty}" readonly>
-                    <button class="btn btn-outline-secondary" type="button" onclick="changeProductQty(${index},'plus')">+</button>
-                </div>  
-            </td>
-            <td>${product.price.toFixed(2)}</td>
-            <td>${product.total.toFixed(2)}</td>
-            <td>
-            ${!product.isBuy ? '<button type="button" class="btn btn-warning" onclick="buyProduct(' + index +')">Buy</button>' : '' }
-            ${!product.isBuy ? '<button type="button" class="btn btn-danger" onclick="removeProduct(' + index +')">Delete</button>' : '' }
-            </td>
-        </tr>`
+    CART.forEach(function(product){
+        tBody += cartListRow(product);
     });
+
     document.getElementById('cart_tbody').innerHTML = tBody; 
     const totals = calcTotal();
     document.getElementById('cartTotal').innerHTML = (totals.totalSum).toFixed(2);
     document.getElementById('bought').innerHTML = (totals.bought).toFixed(2);
     document.getElementById('notBought').innerHTML = (totals.notBought).toFixed(2);
 };
+
+
+function cartListRow(product){
+    let badge = product.isBuy ? '<span class="badge bg-success">Bought</span>' : '<span class="badge bg-danger">Didn\'t buy</span>';
+        return `        
+        <tr data-id="${product.id}">
+            <td>${product.name}</td>
+            <td>${badge}</td>
+            <td>
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button" onclick="changeProductQty(this)" data-change="minus">-</button>
+                    <input type="number" class="form-control" placeholder="" aria-label="Example text with two button addons" value="${product.qty}" readonly>
+                    <button class="btn btn-outline-secondary" type="button" onclick="changeProductQty(this)" data-change="plus">+</button>
+                </div>  
+            </td>
+            <td>${product.price.toFixed(2)}</td>
+            <td class="total">${product.total.toFixed(2)}</td>
+            <td>
+            ${!product.isBuy ? '<button type="button" class="btn btn-warning" onclick="buyProduct(this)">Buy</button>' : ''}
+            ${!product.isBuy ? '<button type="button" class="btn btn-danger" onclick="removeProduct(this)">Delete</button>' : ''}
+            </td>
+        </tr>`
+}
 
 viewCartList();
 
