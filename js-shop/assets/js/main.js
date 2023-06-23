@@ -80,7 +80,7 @@ function buyProduct($btn) {
 
     CART[index].isBuy = true;
 
-    tr.children[1].innerHTML = '<span class="badge text-bg-success">Bought</span>';
+    tr.children[1].innerHTML = '<span class="badge bg-success">Bought</span>';
     tr.children[tr.children.length - 1].innerText = '';
     
     toast.info('Product is bought');
