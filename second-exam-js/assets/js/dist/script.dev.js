@@ -136,6 +136,4 @@ function initMap() {
     icon: circleIcon
   }).addTo(map).bindPopup('<div class="details">The Metropolitan</div>');
 }
-
-initMap();
 /*Contacts - MAP */
