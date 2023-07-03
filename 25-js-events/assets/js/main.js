@@ -15,89 +15,39 @@ function prykladxt(){
 }
 //#Zagalna functsiya
 
-//ctrlKey: возвращает true, если была нажата клавиша Ctrl во время генерации события
+let divTextTransform = document.createElement('div');
+divTextTransform.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consectetur, eligendi ratione soluta hic sapiente, cumque possimus perspiciatis eos perferendis asperiores eaque quis sunt veritatis praesentium quae quod tempora dolores.';
+// console.log(divTextTransform);
+
+document.querySelector('.card-body').prepend(divTextTransform);
 
 
+let areaText = document.createElement('textarea');
+window.addEventListener('keydown', function(event){
+    if (event.ctrlKey && event.code === 'KeyS'){
+    event.preventDefault();
+    
+    areaText.style.width = '100%';
+    areaText.style.padding = '20px';
+    areaText.placeholder = 'Lorem ipsum dolor sit'; 
+
+    areaText = divTextTransform.replaceWith(areaText);
+    areaText = document.createElement('textarea');
+    areaText.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consectetur, eligendi ratione soluta hic sapiente, cumque possimus perspiciatis eos perferendis asperiores eaque quis sunt veritatis praesentium quae quod tempora dolores.';
+    console.log(areaText);
+    } 
 
 
-let CAR = {
-    'Виробник': 'Ford Motor Company',
-    'Модель': 'Mustang 5.2 SAT Shelby GT500',
-    'Рік випуску': 2019,
-    'Середня швидкість': 140,
-    'Обсяг паливного баку': 59,
-    'Середня витрата палива на 100 км': 9,
-    'Водії': ['Андрій', 'Євген', 'Ігор'],
-    addDriver: function addDriver() {
-        const driver = document.getElementById('d-name').value;
-        if (isNaN(driver)) {
-            CAR['Водії'].push(driver);
-                 
-        } else {
-            document.getElementById('error-dr').innerHTML = `<p style="color: red;"><i>Вкажіть коректне значення </i></p>`;  
-        }
-    },
-    searchDriver: function searchDriver() {
-        const driverFind = document.getElementById('d-name-search').value;
-       
-        if (!isNaN(driverFind)) {
-            return document.getElementById('error-search-dr').innerHTML = `<p style="color: red;"><i>Вкажіть ім'я водія</i></p>`;  
-        }
-        if (CAR['Водії'].includes(driverFind)) {        
-            document.getElementById('error-search-dr').innerHTML = `<p style="color: green;"><i>Водій є у списку</i></p>`;           
-        } else {
-            document.getElementById('error-search-dr').innerHTML = `<p style="color: red;"><i>Водій відсутній у списку</i></p>`;  
-        }
-    },
-    showInfo: function showInfo() {
-        let rez = `<ul>`;
-            for (let key in CAR) {
-                if (key !== 'showInfo' && key !== 'calcData' && key !== 'addDriver' && key !== 'searchDriver'){
-                rez += `<li><strong>${key}:</strong> ${CAR[key]}</li>`
-            }
-        }
-        rez += `</ul>`;
-        document.getElementById('avto_info').innerHTML = rez;
-    },
-    calcData: function calcData() {
-        const distance = getVal('distance_km');      
-        if ((isNaN(distance) || Math.sign(distance) === -1) && distance !== 0 ) {
-            document.getElementById('error').innerHTML = `<p style="color: red;"><i>Вкажіть коректне значення </i></p>`;  
-        } else {
-        let time = 0,
-                stopTime = 0,
-                fullTime = 0,
-                fuelNeed = 0,
-                fullTimeH = 0,
-                fullTimeM = 0;
-
-            time = distance / CAR['Середня швидкість'];
-            stopTime = Math.trunc((time -1) /4);
-            fullTime = time + stopTime;
-            fullTimeH = Math.trunc(fullTime);
-            fullTimeM = Math.trunc((fullTime - fullTimeH).toFixed(2) * 60);
-
-            fuelNeed = (distance / 100 * CAR['Середня витрата палива на 100 км']).toFixed(2);
-
-            if ((fullTimeH > 0 && fullTimeM > 0) || (fullTimeH === 0 && fullTimeM === 0)){
-                document.getElementById('calc_time').innerHTML = `<p><strong>Час в дорозі: </strong>${fullTimeH} год. ${fullTimeM} хв.</p>`;
-            } else if (fullTimeH > 0 && fullTimeM === 0){
-                document.getElementById('calc_time').innerHTML = `<p><strong>Час в дорозі: </strong>${fullTimeH} год.</p>`;
-            } else if (fullTimeH === 0 && fullTimeM > 0){
-                document.getElementById('calc_time').innerHTML = `<p><strong>Час в дорозі: </strong>${fullTimeM} хв.</p>`;
-            } 
-            
-            document.getElementById('calc_fuel').innerHTML = `<p><strong>Обсяг витраченого палива: </strong>${fuelNeed} л</p>`;
-        }
+    if (event.ctrlKey && event.code === 'KeyE'){
+        event.preventDefault();
+        console.log('KeyE')
+        areaText = areaText.replaceWith('div');
+        console.log(areaText)
+        // divTextTransform.replaceWith('div');
+        // return ;
     }
-}
 
+});
 
-function pullDr() {
-    CAR.addDriver();
-    CAR.showInfo();
-}
-
-CAR.showInfo();
 
 
