@@ -724,7 +724,7 @@ header .logo {
   margin: 0 auto;
   position: relative;
 }
-.footer-container .comtact-form {
+.footer-container .contact-form {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -735,16 +735,16 @@ header .logo {
   min-width: 100%;
   z-index: 1001;
 }
-.footer-container .comtact-form .section-title-h2 {
+.footer-container .contact-form .section-title-h2 {
   font-size: 2.75rem;
   text-shadow: unset;
   margin-bottom: 42px;
 }
-.footer-container .comtact-form .btn-link {
+.footer-container .contact-form .btn-link {
   margin-bottom: 0;
   text-align: right;
 }
-.footer-container .comtact-form .btn-link button {
+.footer-container .contact-form .btn-link button {
   padding: 13px 34px;
   z-index: 1;
 }
@@ -852,6 +852,10 @@ header .logo {
 
   .social-top {
     display: none;
+  }
+
+  .soc-info .social-top {
+    display: block;
   }
 
   .hamburger {
@@ -1024,6 +1028,14 @@ header .logo {
   .section-third .section-title-h2 {
     font-size: 1.375rem;
   }
+
+  .footer-container {
+    aspect-ratio: unset;
+  }
+  .footer-container .contact-form {
+    min-width: unset;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 480px) {
   .section-third .news-slider .slick-list {
@@ -1041,5 +1053,15 @@ header .logo {
   .section-fourth #gallery .big {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  .footer-container .contact-form {
+    padding: 30px 20px;
+  }
+  .footer-container .soc-info {
+    flex-direction: column;
+  }
+  .footer-container .copyright {
+    text-align: center;
   }
 }

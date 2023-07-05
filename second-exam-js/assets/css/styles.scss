@@ -709,7 +709,7 @@ header {
     margin: 0 auto;
     position: relative;
   }
-  .comtact-form {
+  .contact-form {
     position: absolute;
     bottom: 100%;
     left: 0;
@@ -849,6 +849,11 @@ header {
   }
   .social-top {
     display: none;
+  }
+  .soc-info {
+    .social-top {
+      display: block;
+    }
   }
   .hamburger {
     display: block;
@@ -1045,6 +1050,14 @@ header {
       @include fz(22);
     }
   }
+  
+  .footer-container {
+    aspect-ratio: unset;
+    .contact-form {
+      min-width: unset;
+      width: 100%;
+    }
+  }
 }
 @media screen and (max-width: 480px) {
   .section-third {
@@ -1069,6 +1082,16 @@ header {
       }
 
     }
-}
-    
+  }
+  .footer-container {
+    .contact-form {
+      padding: 30px 20px;
+    }
+    .soc-info {
+      flex-direction: column;
+    }
+    .copyright {
+      text-align: center;
+    }
+  } 
 }
