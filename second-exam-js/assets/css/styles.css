@@ -811,6 +811,7 @@ header .logo {
   width: 100%;
   margin-bottom: 33px;
   position: relative;
+  margin-top: 10px;
 }
 .footer-container #contacts input[type=text],
 .footer-container #contacts input[type=email] {
