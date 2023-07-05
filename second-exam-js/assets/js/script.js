@@ -144,4 +144,56 @@ const lazyLoadInstance = new LazyLoad({});
       L.marker([40.7800531, -73.9634008], {icon: circleIcon}).addTo(map)
           .bindPopup('<div class="details">The Metropolitan</div>')
   }
-  /*-====================Contacts - MAP ====================-*/
+  /*-====================#Contacts - MAP ====================-*/
+  /*-====================Contacts - FORM ====================-*/
+  window.contacts.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    const errors = [];
+
+    let msg = '',
+        name = window.yourname.value,
+        email = window.email.value;
+
+        if(name === ''){
+            errors.push('Enter your name');
+        }
+        if(email === ''){
+            errors.push('Enter your email');
+        }
+        if(errors.length === 0){
+            msg =`
+            <b>Name: </b>${name}
+<b>Email: </b>${email}
+            `
+            sendMessage(msg);
+        } else {
+            alert(errors.join(' '));
+        }
+
+})
+
+async function sendMessage(message){
+    const apiToken = "5726680712:AAGxufjvVURAaIXc-a2nxzl5Ovkfk4kxh-g";
+    const chatId = "-1001911238406";
+    
+    let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=HTML`;
+
+
+    const response = await fetch(`https://api.telegram.org/bot${apiToken}/sendMessage`, {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'HTML'
+    })
+  });
+  const resp = await response.json();
+  console.log(resp);
+    
+}
+  /*-====================Contacts - FORM ====================-*/

@@ -117,4 +117,71 @@ function initMap() {
     icon: circleIcon
   }).addTo(map).bindPopup('<div class="details">The Metropolitan</div>');
 }
-/*-====================Contacts - MAP ====================-*/
+/*-====================#Contacts - MAP ====================-*/
+
+/*-====================Contacts - FORM ====================-*/
+
+
+window.contacts.addEventListener('submit', function (event) {
+  event.preventDefault();
+  var errors = [];
+  var msg = '',
+      name = window.yourname.value,
+      email = window.email.value;
+
+  if (name === '') {
+    errors.push('Enter your name');
+  }
+
+  if (email === '') {
+    errors.push('Enter your email');
+  }
+
+  if (errors.length === 0) {
+    msg = "\n            <b>Name: </b>".concat(name, "\n<b>Email: </b>").concat(email, "\n            ");
+    sendMessage(msg);
+  } else {
+    alert(errors.join(' '));
+  }
+});
+
+function sendMessage(message) {
+  var apiToken, chatId, urlString, response, resp;
+  return regeneratorRuntime.async(function sendMessage$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          apiToken = "5726680712:AAGxufjvVURAaIXc-a2nxzl5Ovkfk4kxh-g";
+          chatId = "-1001911238406";
+          urlString = "https://api.telegram.org/bot".concat(apiToken, "/sendMessage?chat_id=").concat(chatId, "&text=").concat(message, "&parse_mode=HTML");
+          _context.next = 5;
+          return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(apiToken, "/sendMessage"), {
+            method: 'post',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: message,
+              parse_mode: 'HTML'
+            })
+          }));
+
+        case 5:
+          response = _context.sent;
+          _context.next = 8;
+          return regeneratorRuntime.awrap(response.json());
+
+        case 8:
+          resp = _context.sent;
+          console.log(resp);
+
+        case 10:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+}
+/*-====================Contacts - FORM ====================-*/

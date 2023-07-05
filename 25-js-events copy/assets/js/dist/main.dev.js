@@ -53,11 +53,7 @@ function sendMessage(message) {
         case 0:
           apiToken = "5726680712:AAGxufjvVURAaIXc-a2nxzl5Ovkfk4kxh-g";
           chatId = "-1001911238406";
-          urlString = "https://api.telegram.org/bot".concat(apiToken, "/sendMessage?chat_id=").concat(chatId, "&text=").concat(message, "&parse_mode=HTML"); // let request = new XMLHttpRequest();
-          // request.open("GET", urlString);
-          // request.send();       
-          // let response = request.response;
-
+          urlString = "https://api.telegram.org/bot".concat(apiToken, "/sendMessage?chat_id=").concat(chatId, "&text=").concat(message, "&parse_mode=HTML");
           _context.next = 5;
           return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(apiToken, "/sendMessage"), {
             method: 'post',
