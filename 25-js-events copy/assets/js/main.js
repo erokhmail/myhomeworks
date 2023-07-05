@@ -50,10 +50,7 @@ async function sendMessage(message){
     
     let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=HTML`;
     
-    // let request = new XMLHttpRequest();
-    // request.open("GET", urlString);
-    // request.send();       
-    // let response = request.response;
+    
 
 
     const response = await fetch(`https://api.telegram.org/bot${apiToken}/sendMessage`, {
