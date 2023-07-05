@@ -18,7 +18,7 @@ $(document).ready(function () {
     dots: true,
     vertical: true,
     verticalSwiping: true,
-    autoplay: true,
+    autoplay: false,
     speed: 1500,
     responsive: [{
       breakpoint: 600,

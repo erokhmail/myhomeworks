@@ -222,7 +222,7 @@
           </div>
         </div>
       </section>
-      <section class="section-second">
+      <section class="section-second ">
         <div class="container">
           <h2 class="section-title-h2 heading wow animate__fadeInUp">WHAT WE DO</h2>
           <div class="img-info rtl ">
@@ -280,7 +280,7 @@
         </div>
 
       </section>
-      <section class="section-third lazy" data-bg="assets/images/news-background-min.jpg">
+      <section class="section-third lazy pt-50" data-bg="assets/images/news-background-min.jpg">
         <div class="container">
           <h2 class="section-title-h2 heading wow animate__fadeInUp">LATEST NEWS</h2>
           <div class="news-wrap">
@@ -290,13 +290,13 @@
           </div>
         </div>
       </section>
-      <section class="section-fourth">
+      <section class="section-fourth pt-50">
         <div class="container">
           <h2 class="section-title-h2 heading wow animate__fadeInUp">Gallery</h2>
           <div class="gallery-wrap">
-            <div id="gallery" class="wow animate__fadeInUp">
+            <div id="gallery" class="">
               <a href="assets/images/gal-1-min.jpg" data-lg-size="580-438"
-                data-lg-thumbnail="assets/images/gal-1-min.jpg" class="big">
+                data-lg-thumbnail="assets/images/gal-1-min.jpg" class="big wow animate__fadeInUp">
                 <img data-src="assets/images/gal-1-min.jpg" title="Some gallery image 1" class="lazy"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 <div class="zoom-icon">
@@ -315,7 +315,7 @@
                 </div>
               </a>
               <a href="assets/images/gal-2-min.jpg" data-lg-size="285-241"
-                data-lg-thumbnail="assets/images/gal-2-min.jpg">
+                data-lg-thumbnail="assets/images/gal-2-min.jpg" class="wow animate__fadeInUp">
                 <img data-src="assets/images/gal-2-min.jpg" title="Some gallery image 2" class="lazy"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 <div class="zoom-icon">
@@ -334,7 +334,7 @@
                 </div>
               </a>
               <a href="assets/images/gal-3-min.jpg" data-lg-size="285-241"
-                data-lg-thumbnail="assets/images/gal-3-min.jpg">
+                data-lg-thumbnail="assets/images/gal-3-min.jpg" class="wow animate__fadeInUp">
                 <img data-src="assets/images/gal-3-min.jpg" title="Some gallery image 3" class="lazy"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 <div class="zoom-icon">
@@ -353,7 +353,7 @@
                 </div>
               </a>
               <a href="assets/images/gal-4-min.jpg" data-lg-size="285-241"
-                data-lg-thumbnail="assets/images/gal-4-min.jpg">
+                data-lg-thumbnail="assets/images/gal-4-min.jpg" class="wow animate__fadeInUp">
                 <img data-src="assets/images/gal-4-min.jpg" title="Some gallery image 4" class="lazy"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 <div class="zoom-icon">
@@ -372,7 +372,7 @@
                 </div>
               </a>
               <a href="assets/images/gal-5-min.jpg" data-lg-size="285-241"
-                data-lg-thumbnail="assets/images/gal-5-min.jpg">
+                data-lg-thumbnail="assets/images/gal-5-min.jpg" class="wow animate__fadeInUp">
                 <img data-src="assets/images/gal-5-min.jpg" title="Some gallery image 5" class="lazy"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 <div class="zoom-icon">
@@ -404,7 +404,12 @@
           <div id="contact-map">
             <a href="javascript:void(0)" id="map_active">
               <div class="map-text">Please click to interactive map</div>
-              <img class="lazy" data-src="assets/images/map-prev-min.png" alt="Map">
+              <picture>
+                <source data-srcset="assets/images/map-prev-mob-min.png" media="(max-width: 480px)">
+                <img class="lazy" data-src="assets/images/map-prev-min.png" alt="Map"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+              </picture>
+              <!-- <img class="lazy" data-src="assets/images/map-prev-min.png" alt="Map"> -->
             </a>
           </div>
 

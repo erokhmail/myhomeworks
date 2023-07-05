@@ -98,6 +98,7 @@ header {
      li {
       padding-left: 24px;
       margin-right: 14px;
+      margin-top: -4px;
       &:first-child {
         margin-left: 35px;
       }
@@ -164,7 +165,7 @@ header {
   display: none;
 }
 .btn-link {
-  margin-bottom: 60px;
+  margin-bottom: 67px;
     a, button {
       font-family: 'Montserrat', sans-serif;   
       @include fz(14); 
@@ -174,7 +175,7 @@ header {
       color: #000;
       text-transform: uppercase;
       border: 1px solid $color-font;
-      padding: 17px 41px;
+      padding: 16px 41px;
       background-color: transparent;
       position: relative;
       &::after {
@@ -203,6 +204,7 @@ header {
   .big-slider {
     .section-wrap{
       min-height: 100vh;
+      position: relative;
     }
     .slick-list {
       overflow: hidden;
@@ -285,6 +287,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 1px;
     
     a {
       transform: translateY(-5.5rem);
@@ -303,7 +306,7 @@ header {
     @include fz(44);
     text-align: center;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 90px;
+    margin-bottom: 97px;
     &::before {
       content: '';
       border: 1px solid $color-font;
@@ -313,7 +316,7 @@ header {
       position: relative;
       left: 50%;
       transform: translateX(-50%);
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
   }
   .heading {
@@ -329,7 +332,7 @@ header {
   .img-info {
     padding: 50px 0;
     display: flex;
-    column-gap: 70px;
+    column-gap: 64px;
   }
   .rtl, .ltr {
     margin-bottom: 60px;
@@ -337,12 +340,13 @@ header {
       max-width: 630px;
       aspect-ratio: 63/47;
       &.blue {
-        box-shadow: -215px -57px #55B7FF;
+        box-shadow: -259px -57px #55B7FF;
       }
     }
     .text-wrap {
       max-width: 476px;
-      align-self: end;      
+      align-self: end;   
+      padding-left: 6px;   
       .sup-title {
         font-family: 'Montserrat', sans-serif;   
         @include fz(22); 
@@ -359,18 +363,27 @@ header {
       }
     }
   }
+  .rtl {
+    margin-bottom: 76px;
+  }
+  .ltr {
+    .text-wrap {
+      padding-left: 0;
+    }
+  }
 }
 
 
 .ltr {
   flex-direction: row-reverse;
+  margin-bottom: 76px;
   .img-wrap {
     &.violet {
-      box-shadow: 215px -57px #7E5AFF;
+      box-shadow: 260px -57px #7E5AFF;
     }
   }
   .btn-link {
-    margin-bottom: 60px;
+    margin-bottom: 67px;
       a, button {
         &:hover {
           &::after {
@@ -381,6 +394,7 @@ header {
         }
       }
     }
+    
 }
 .adr-link { 
   display: inline-block;
@@ -396,7 +410,7 @@ header {
     filter: opacity(0.5);
   }
   span {
-    margin-left: 10px;
+    margin-left: 7px;
   }
 }
 /*-====================#Section-Second ====================-*/
@@ -842,6 +856,12 @@ header {
           }
         }
   }
+  .footer-container {
+    .contact-form {
+      margin-top: 0;
+      position: relative;
+    }
+  }
 }
 @media screen and (max-width: 1024px) {
   .main-menu {
@@ -1047,16 +1067,30 @@ header {
       
     }
     .section-title-h2 {
-      @include fz(22);
+      @include fz(20);
     }
   }
-  
+  .section-second, .section-third, .section-fourth, .footer-container {
+      padding: 40px 0;
+    .section-title-h2 {
+      @include fz(36);
+      margin-bottom: 40px;
+    }
+  }
+  .section-second, .section-third {
+      .rtl, .ltr {
+        margin-bottom: 20px;
+      }
+    }
   .footer-container {
     aspect-ratio: unset;
     .contact-form {
       min-width: unset;
       width: 100%;
     }
+  }
+  .pt-50 {
+    padding-top: 90px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1083,15 +1117,42 @@ header {
 
     }
   }
+  .section-fifth {
+    #contact-map {
+      min-height: 400px;
+      aspect-ratio: unset;
+      #map_active {
+        position: relative;
+        display: block;     
+        .map-text {
+          @include fz(36);
+          opacity: 1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+    
+  }
   .footer-container {
     .contact-form {
-      padding: 30px 20px;
+      padding: 50px 20px;
+      margin-top: 0;
+      position: relative;
     }
     .soc-info {
       flex-direction: column;
     }
     .copyright {
       text-align: center;
+    }
+    .info {
+      .point {
+        span {
+          @include fz(16);
+        }
+      }
     }
   } 
 }

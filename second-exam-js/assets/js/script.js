@@ -12,13 +12,13 @@ const lazyLoadInstance = new LazyLoad({});
 
     
   $(document).ready(function(){
- /*/*-====================big Slider ====================-*/
+/*/*-====================big Slider ====================-*/
     $('.big-slider').slick({
       arrows: false,
       dots: true,
       vertical: true,
       verticalSwiping: true,
-      autoplay: true,
+      autoplay: false,
       speed: 1500,
       responsive: [
         {
