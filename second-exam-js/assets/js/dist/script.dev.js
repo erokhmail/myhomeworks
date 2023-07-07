@@ -139,7 +139,7 @@ window.contacts.addEventListener('submit', function (event) {
   pBad.innerHTML = "<span style=\"color: red;\"><i>Please enter all empty fields</i></span>";
   var pGood = document.createElement('div');
   pGood.className = 'success';
-  pGood.innerHTML = "<span style=\"color: green;\"><i>Please enter all empty fields</i></span>";
+  pGood.innerHTML = "<span style=\"color: green;\"><i>Your request sent successfully</i></span>";
   var errors = [];
   var msg = '',
       name = window.yourname.value,
@@ -174,7 +174,7 @@ window.contacts.addEventListener('submit', function (event) {
   }
 
   if (errors.length === 0) {
-    msg = "\n            <b>Name: </b>".concat(name, "\n        <b>Email: </b>").concat(email, "\n            ");
+    msg = "\n            <b>Name: </b>".concat(name, "\n<b>Email: </b>").concat(email, "\n            ");
     sendMessage(msg);
   } else {
     alert(errors.join(' '));

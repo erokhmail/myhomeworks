@@ -168,7 +168,7 @@ $(function(){
 
     let pGood = document.createElement('div');
     pGood.className = 'success'
-    pGood.innerHTML = `<span style="color: green;"><i>Please enter all empty fields</i></span>`;
+    pGood.innerHTML = `<span style="color: green;"><i>Your request sent successfully</i></span>`;
     
 
     const errors = [];
@@ -208,7 +208,7 @@ $(function(){
         if(errors.length === 0){
             msg =`
             <b>Name: </b>${name}
-        <b>Email: </b>${email}
+<b>Email: </b>${email}
             `
             sendMessage(msg);
         } else {
