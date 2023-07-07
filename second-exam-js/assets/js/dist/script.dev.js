@@ -2,11 +2,6 @@
 
 function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
-function toggleMenu1() {// document.getElementById('hamb-bnt').classList.toggle("is-active");
-  // document.getElementById('mobile-sidebar').classList.toggle('open')
-  // document.getElementById('shadow').classList.toggle('show');
-}
-
 var lazyLoadInstance = new LazyLoad({});
 var wow = new WOW({
   animateClass: "animate__animated"
@@ -28,7 +23,7 @@ $(function () {
     dots: true,
     vertical: true,
     verticalSwiping: true,
-    autoplay: false,
+    autoplay: true,
     speed: 1500,
     responsive: [{
       breakpoint: 600,
@@ -232,3 +227,12 @@ function sendMessage(message) {
   });
 }
 /*-====================Contacts - FORM ====================-*/
+
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > document.getElementById("topper").offsetHeight) {
+    document.getElementById("header").classList.add("fixed");
+  } else {
+    document.getElementById("header").classList.remove("fixed");
+  }
+});
