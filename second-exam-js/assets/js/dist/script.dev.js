@@ -1,9 +1,10 @@
 "use strict";
 
-function toggleMenu() {
-  document.getElementById('hamb-bnt').classList.toggle("is-active");
-  document.getElementById('mobile-sidebar').classList.toggle('open');
-  document.getElementById('shadow').classList.toggle('show');
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
+function toggleMenu1() {// document.getElementById('hamb-bnt').classList.toggle("is-active");
+  // document.getElementById('mobile-sidebar').classList.toggle('open')
+  // document.getElementById('shadow').classList.toggle('show');
 }
 
 var lazyLoadInstance = new LazyLoad({});
@@ -11,8 +12,17 @@ var wow = new WOW({
   animateClass: "animate__animated"
 });
 wow.init();
-$(document).ready(function () {
+$(function () {
+  /*/*-====================toggleMenu ====================-*/
+  $("#hamb-bnt").click(function () {
+    $(this).toggleClass("is-active");
+    $('#shadow').toggleClass('show');
+    $('#mobile-sidebar').toggleClass('open');
+  });
+  /*/*-====================#toggleMenu ====================-*/
+
   /*/*-====================big Slider ====================-*/
+
   $('.big-slider').slick({
     arrows: false,
     dots: true,
@@ -124,17 +134,45 @@ function initMap() {
 
 window.contacts.addEventListener('submit', function (event) {
   event.preventDefault();
+  document.getElementById("yourname-wrap").classList.remove("has-err");
+  document.getElementById("email-wrap").classList.remove("has-err");
+  var pBad = document.createElement('p');
+  pBad.className = 'unsuccess';
+  pBad.innerHTML = "<span style=\"color: red;\"><i>Please enter all empty fields</i></span>";
+  var pGood = document.createElement('div');
+  pGood.className = 'success';
+  pGood.innerHTML = "<span style=\"color: green;\"><i>Please enter all empty fields</i></span>";
   var errors = [];
   var msg = '',
       name = window.yourname.value,
-      email = window.email.value;
+      email = window.email.value,
+      formSuccess = document.getElementById('form-unsuccess');
+
+  if (name === '' && email === '') {
+    if (formSuccess.innerHTML.trim() == "") {
+      errors = (_readOnlyError("errors"), document.getElementById("email-wrap").classList.add("has-err") + document.getElementById("yourname-wrap").classList.add("has-err") + document.getElementById('form-unsuccess').append(pBad));
+    } else {
+      document.getElementById('form-success').remove(pGood);
+      errors = (_readOnlyError("errors"), document.getElementById("email-wrap").classList.add("has-err") + document.getElementById("yourname-wrap").classList.add("has-err"));
+    }
+  }
 
   if (name === '') {
-    errors.push('Enter your name');
+    if (formSuccess.innerHTML.trim() == "") {
+      errors = (_readOnlyError("errors"), document.getElementById("yourname-wrap").classList.add("has-err") + document.getElementById('form-unsuccess').append(pBad));
+    } else {
+      errors = (_readOnlyError("errors"), document.getElementById("yourname-wrap").classList.add("has-err"));
+      document.getElementById("email-wrap").classList.remove("has-err");
+    }
   }
 
   if (email === '') {
-    errors.push('Enter your email');
+    if (formSuccess.innerHTML.trim() == "") {
+      errors = (_readOnlyError("errors"), document.getElementById("email-wrap").classList.add("has-err") + document.getElementById('form-unsuccess').append(pBad));
+    } else {
+      errors = (_readOnlyError("errors"), document.getElementById("email-wrap").classList.add("has-err"));
+      document.getElementById("yourname-wrap").classList.remove("has-err");
+    }
   }
 
   if (errors.length === 0) {
@@ -143,6 +181,15 @@ window.contacts.addEventListener('submit', function (event) {
   } else {
     alert(errors.join(' '));
   }
+
+  document.getElementById("contacts").reset();
+  console.log(formSuccess.innerHTML);
+  formSuccess.innerHTML = '';
+  var answer = document.getElementById('form-success');
+  answer.append(pGood);
+  setTimeout(function () {
+    return pGood.remove();
+  }, 1300);
 });
 
 function sendMessage(message) {

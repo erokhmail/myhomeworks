@@ -42,7 +42,7 @@ $hamburger-hover-filter       : opacity(50%) !default;
     }
     @else {
       opacity: $hamburger-hover-opacity;
-      z-index: 100;
+      z-index: 10001;
     }
   }
 
