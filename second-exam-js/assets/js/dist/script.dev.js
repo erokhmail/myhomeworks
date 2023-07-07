@@ -43,6 +43,21 @@ $(function () {
       scrollTop: $(".section-second").offset().top - 100
     }, 1000);
   });
+  /*/*-====================#next section====================- */
+
+  /*-====================LIGHT Gallery ====================-*/
+
+  lightGallery(document.getElementById('gallery'), {
+    plugins: [lgThumbnail, lgZoom],
+    lgThumbnail: true,
+    licenseKey: '4342-2322-2344-4434',
+    controls: true,
+    download: false,
+    thumbWidth: 200,
+    preload: 1,
+    thumbHeight: 200
+  });
+  /*LIGHT Gallery */
 });
 
 function getNews() {
@@ -83,18 +98,6 @@ function getNews() {
 }
 
 getNews();
-/*-====================LIGHT Gallery ====================-*/
-
-lightGallery(document.getElementById('gallery'), {
-  plugins: [lgThumbnail, lgZoom],
-  licenseKey: '4342-2322-2344-4434',
-  controls: true,
-  download: false,
-  thumbWidth: 200,
-  thumbHeight: 200
-});
-/*LIGHT Gallery */
-
 /*-====================Contacts - MAP====================- */
 
 window.map_active.onclick = function () {
@@ -171,7 +174,7 @@ window.contacts.addEventListener('submit', function (event) {
   }
 
   if (errors.length === 0) {
-    msg = "\n            <b>Name: </b>".concat(name, "\n<b>Email: </b>").concat(email, "\n            ");
+    msg = "\n            <b>Name: </b>".concat(name, "\n        <b>Email: </b>").concat(email, "\n            ");
     sendMessage(msg);
   } else {
     alert(errors.join(' '));

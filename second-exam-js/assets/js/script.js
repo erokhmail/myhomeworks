@@ -5,19 +5,19 @@ const lazyLoadInstance = new LazyLoad({});
     wow.init();
 
     
-  $(function(){
-/*/*-====================toggleMenu ====================-*/
- 
-  $("#hamb-bnt").click(function () {
-    $(this).toggleClass("is-active");
-    $('#shadow').toggleClass('show');
-    $('#mobile-sidebar').toggleClass('open');
+$(function(){
+    /*/*-====================toggleMenu ====================-*/
     
-  });
+      $("#hamb-bnt").click(function () {
+        $(this).toggleClass("is-active");
+        $('#shadow').toggleClass('show');
+        $('#mobile-sidebar').toggleClass('open');
+        
+      });
 
 
-/*/*-====================#toggleMenu ====================-*/
-/*/*-====================big Slider ====================-*/
+  /*/*-====================#toggleMenu ====================-*/
+  /*/*-====================big Slider ====================-*/
     $('.big-slider').slick({
       arrows: false,
       dots: true,
@@ -35,6 +35,7 @@ const lazyLoadInstance = new LazyLoad({});
         }
       ]
     });
+    
  /*/*-====================#big Slider====================- */
 
 
@@ -48,7 +49,20 @@ const lazyLoadInstance = new LazyLoad({});
         }, 1000);
       });
 
-  });
+  /*/*-====================#next section====================- */
+  /*-====================LIGHT Gallery ====================-*/
+    lightGallery(document.getElementById('gallery'), {
+      plugins: [lgThumbnail, lgZoom],
+      lgThumbnail: true,
+      licenseKey: '4342-2322-2344-4434',
+      controls: true,
+      download: false,
+      thumbWidth: 200,
+      preload: 1,
+      thumbHeight: 200
+    });
+    /*LIGHT Gallery */
+});
 
   function getNews(){
     fetch('data/news.json')
@@ -117,16 +131,7 @@ const lazyLoadInstance = new LazyLoad({});
   getNews();
 
 
-  /*-====================LIGHT Gallery ====================-*/
-  lightGallery(document.getElementById('gallery'), {
-    plugins: [lgThumbnail, lgZoom],
-    licenseKey: '4342-2322-2344-4434',
-    controls: true,
-    download: false,
-    thumbWidth: 200,
-    thumbHeight: 200
-});
-  /*LIGHT Gallery */
+ 
 
   /*-====================Contacts - MAP====================- */
   window.map_active.onclick = function() {
@@ -203,7 +208,7 @@ const lazyLoadInstance = new LazyLoad({});
         if(errors.length === 0){
             msg =`
             <b>Name: </b>${name}
-<b>Email: </b>${email}
+        <b>Email: </b>${email}
             `
             sendMessage(msg);
         } else {
@@ -218,31 +223,31 @@ const lazyLoadInstance = new LazyLoad({});
         setTimeout(() => pGood.remove(), 1300);
       
 
-})
+  })
 
-async function sendMessage(message){
-    const apiToken = "5726680712:AAGxufjvVURAaIXc-a2nxzl5Ovkfk4kxh-g";
-    const chatId = "-1001911238406";
-    
-    let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=HTML`;
+    async function sendMessage(message){
+        const apiToken = "5726680712:AAGxufjvVURAaIXc-a2nxzl5Ovkfk4kxh-g";
+        const chatId = "-1001911238406";
+        
+        let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=HTML`;
 
 
-    const response = await fetch(`https://api.telegram.org/bot${apiToken}/sendMessage`, {
-    method: 'post',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message,
-      parse_mode: 'HTML'
-    })
-  });
-  const resp = await response.json();
-  console.log(resp);
-    
-}
+        const response = await fetch(`https://api.telegram.org/bot${apiToken}/sendMessage`, {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      });
+      const resp = await response.json();
+      console.log(resp);
+        
+    }
   /*-====================Contacts - FORM ====================-*/
   window.addEventListener('scroll', function () {
     if (window.scrollY > document.getElementById("topper").offsetHeight) {
